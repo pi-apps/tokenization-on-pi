@@ -6,5 +6,9 @@ Through our TokensDeFi system, real world physical and non-physical assets such 
 
 Tokens are freely tradable in the Pi cryptocurrency on our TokensDeFi exchange. Pi SDK will ensure that only KYC'ed pioneers can issue, invest and trade tokens. 
 
+
+![](https://raw.githubusercontent.com/pi-apps/tokenization-on-pi/main/images/Screenshot_20230213_184737_com.android.chrome.jpg)
+
+
 Youtube video:  https://youtu.be/FUUBgETOUBQ
 
