@@ -1,23 +1,35 @@
 # Tokenization on Pi
 
-Your gateway into the tokenization ecosystem. An end-to-end solution for tokenized assets.
+##Your gateway into the tokenization ecosystem. An end-to-end solution for tokenized assets.
 
-Through our TokensDeFi system, real world physical and non-physical assets such as domains, company shares, real estates,etc. can be fractionalized and issued as tokens on the Pi blockchain.
+##Through our TokensDeFi system, real world physical and non-physical assets such as domains, company shares, real estates,etc. can be fractionalized and issued as tokens on the Pi blockchain.
 
-Tokens are freely tradable in the Pi cryptocurrency on our TokensDeFi exchange. Pi SDK will ensure that only KYC'ed pioneers can issue, invest and trade tokens. 
+##Tokens are freely tradable in the Pi cryptocurrency on our TokensDeFi exchange. Pi SDK will ensure that only KYC'ed pioneers can issue, invest and trade tokens. 
 
 
-<br /><br />![](https://raw.githubusercontent.com/pi-apps/tokenization-on-pi/main/images/Screenshot_20230213_184737_com.android.chrome.jpg)
+<br /><br />![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) 
+## Create asset token proposal
+![](https://raw.githubusercontent.com/pi-apps/tokenization-on-pi/main/images/Screenshot_20230213_184737_com.android.chrome.jpg)
 
-<br /><br />![](https://raw.githubusercontent.com/pi-apps/tokenization-on-pi/main/images/Screenshot_20230213_191654_com.android.chrome.jpg)
+<br /><br />![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) 
+## Pioneers read and upvote proposal
+![](https://raw.githubusercontent.com/pi-apps/tokenization-on-pi/main/images/Screenshot_20230213_191654_com.android.chrome.jpg)
 
-<br /><br />![](https://raw.githubusercontent.com/pi-apps/tokenization-on-pi/main/images/Screenshot_20230213_200101_com.android.chrome.jpg)
+<br /><br />![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) 
+## Pioneers interact with asset owner - AMA via Investor Forum
+![](https://raw.githubusercontent.com/pi-apps/tokenization-on-pi/main/images/Screenshot_20230213_200101_com.android.chrome.jpg)
 
-<br /><br />![](https://raw.githubusercontent.com/pi-apps/tokenization-on-pi/main/images/Screenshot_20230213_200801_com.android.chrome.jpg)
+<br /><br />![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) 
+## Polls where pioneers cast their Yes/No votes on the proposal
+![](https://raw.githubusercontent.com/pi-apps/tokenization-on-pi/main/images/Screenshot_20230213_200801_com.android.chrome.jpg)
 
-<br /><br />![](https://raw.githubusercontent.com/pi-apps/tokenization-on-pi/main/images/Screenshot_20230213_202249_com.android.chrome.jpg)
+<br /><br />![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) 
+## Panel of specialists review the proposal and give their grades
+![](https://raw.githubusercontent.com/pi-apps/tokenization-on-pi/main/images/Screenshot_20230213_202249_com.android.chrome.jpg)
 
-<br /><br />![](https://raw.githubusercontent.com/pi-apps/tokenization-on-pi/main/images/Screenshot_20230213_204000_com.android.chrome.jpg)
+<br /><br />![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) 
+## Legal team finalize contracts and documents for listing of asset token
+![](https://raw.githubusercontent.com/pi-apps/tokenization-on-pi/main/images/Screenshot_20230213_204000_com.android.chrome.jpg)
 
 
 
