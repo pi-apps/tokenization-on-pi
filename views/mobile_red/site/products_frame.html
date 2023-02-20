@@ -1,0 +1,673 @@
+<script>
+
+window.upvote=function(){
+   var uv=$("#upvote").html().includes("fa fa-thumbs-o-up") ? 1 : 0;
+   $.ajax({
+	url: eurl("process.php?module=ucenter&action=proposal_upvote&proposal="+window.proposal+"&vote="+uv, true),
+	type: "post",
+	error: function(e){},
+	success: function(d){
+	   d = trimoff(d).substr(1);
+	   if(d!='') {
+		$("[id=upvote]").html('<i class="'+(uv?'fa fa-thumbs-up':'fa fa-thumbs-o-up')+'"></i> '+d);
+	   };
+	}
+   });
+}
+
+window.submit=function(){
+   if(nam>10 || nem>20){
+	alert("Net Asset Multiple must not exceed 10x and Net Earnings Multiple must not exceed 20x to qualify for submission.");
+//	return;
+   }
+   $("#uploading")[0].style.display='flex';
+   art.dialog({
+	content:'Once submitted you will not be able to edit this proposal.<br><br>Continue to submit?',
+	ok:function(){
+	   $.ajax({
+		url: eurl("process.php?module=ucenter&action=proposal_submit&proposal="+window.proposal, true),
+		type: "post",
+		error: function(e){},
+		success: function(d){
+		   d = trimoff(d).substr(1);
+		   if(d=='1') {
+			art.dialog({
+			    content:"Submitted successfully. A number of topics have been posted on Investor Forum.<br><br>Please elaborate in detail on each topic, and subsequently answer potential investors' queries.<br><br>New proposal requires minimum "+upvotes_required+" upvotes to progress to the next stage - Polls.",
+			    ok:function(){
+				localStorage.is_del=4; localStorage.click='forum';
+				location.href=eurl("process.php?module=site&action=products_frame&id="+window.proposal);
+			    }
+			});
+		   }
+		   else {
+			$("#uploading").hide();
+			alert("Submission failed !");
+		   }
+		}
+	   });
+	},
+	cancel:function(){ $("#uploading").hide() }
+   });
+}
+
+window.polls=function(){
+   if(tuv<upvotes_required){
+	alert("New proposal requires minimum "+upvotes_required+" upvotes to progress to the next stage - Polls.<br><br>Please answer as much as possible investors' queries in detail via the Investor Forum.");
+//	return;
+   }
+   $("#uploading")[0].style.display='flex';
+   art.dialog({
+	content:'This proposal is qualified for Investors Polls.<br><br>Continue to commence Polls?',
+	ok:function(){
+	   $.ajax({
+		url: eurl("process.php?module=ucenter&action=polls_create&proposal="+window.proposal, true),
+		type: "post",
+		error: function(e){},
+		success: function(d){
+		   d = trimoff(d).substr(1);
+		   if(d=='1') {
+			art.dialog({
+			    content:"Progressed to Polls stage successfully. The Polls will be conducted on Investor Forum.<br><br>Please allow one week for at least "+upvotes_required+" investors' expression of interest, and minimum "+polls_required+"% 'Yes' votes to progress to the next stage - Panel Review.",
+			    ok:function(){
+				localStorage.is_del=5;
+				location.href=eurl("process.php?module=site&action=products_frame&id="+window.proposal);
+			    }
+			});
+		   }
+		   else {
+			$("#uploading").hide();
+			alert("Request failed !");
+		   }
+		}
+	   });
+	},
+	cancel:function(){ $("#uploading").hide() }
+   });
+}
+
+window.review=function(){
+   if(tp<polls_required){
+	alert("New proposal requires minimum "+polls_required+"% 'Yes' votes to progress to the next stage - Panel Review.<br><br>Please answer as much as possible investors' queries in detail via the Investor Forum.");
+//	return;
+   }
+   $("#uploading")[0].style.display='flex';
+   art.dialog({
+	content:'This proposal is qualified to raise request for panel review.<br><br>Continue to request review?',
+	ok:function(){
+	   $.ajax({
+		url: eurl("process.php?module=ucenter&action=review_create&proposal="+window.proposal, true),
+		type: "post",
+		error: function(e){},
+		success: function(d){
+		   d = trimoff(d).substr(1);
+		   if(d=='1') {
+			art.dialog({
+			    content:"Requested for panel review successfully. The review result will be recorded on Investor Forum in private.<br><br>Please allow two weeks for at least "+panel_required+" panel members to give their grades, and minimum score of "+review_required+"% to progress to the next stage - Legal Contract.",
+			    ok:function(){
+				localStorage.is_del=6;
+				location.href=eurl("process.php?module=site&action=products_frame&id="+window.proposal);
+			    }
+			});
+		   }
+		   else {
+			$("#uploading").hide();
+			alert("Request failed !");
+		   }
+		}
+	   });
+	},
+	cancel:function(){ $("#uploading").hide() }
+   });
+}
+
+window.contract=function(){
+   if(tr<review_required){
+	alert("New proposal requires minimum review score of "+review_required+"% from Panel Review members to progress to the next stage - Legal Contract.<br><br>Please answer as much as possible the panel's queries in detail via the Investor Forum.");
+//	return;
+   }
+   $("#uploading")[0].style.display='flex';
+   art.dialog({
+	content:'This proposal is qualified to raise request for legal contract.<br><br>Continue to request contract?',
+	ok:function(){
+	   $.ajax({
+		url: eurl("process.php?module=ucenter&action=contract_create&proposal="+window.proposal, true),
+		type: "post",
+		error: function(e){},
+		success: function(d){
+		   d = trimoff(d).substr(1);
+		   if(d=='1') {
+			art.dialog({
+			    content:"Requested for legal contract successfully. The legal process will be initiated on Investor Forum in private.<br><br>Please allow max 100 days for the completion of all required legal procedure and documents in compliance with the relevant jurisdictions, prior to the next stage - Token Listing.",
+			    ok:function(){
+				localStorage.is_del=7;
+				location.href=eurl("process.php?module=site&action=products_frame&id="+window.proposal);
+			    }
+			});
+		   }
+		   else {
+			$("#uploading").hide();
+			alert("Request failed !");
+		   }
+		}
+	   });
+	},
+	cancel:function(){ $("#uploading").hide() }
+   });
+}
+
+window.listing=function(){
+   if(tl<contract_required){
+	alert("Requires "+contract_required+"% completion of all required legal procedure and documents in compliance with the relevant jurisdictions in order to progress to the next stage - Token Listing.<br><br>Please communicate with the legal team via the Investor Forum.");
+//	return;
+   }
+   $("#uploading")[0].style.display='flex';
+   art.dialog({
+	content:'This proposal is qualified for listing and token offer.<br><br>Continue to initiate listing?',
+	ok:function(){
+	   $.ajax({
+		url: eurl("process.php?module=ucenter&action=listing_create&proposal="+window.proposal, true),
+		type: "post",
+		error: function(e){},
+		success: function(d){
+		   d = trimoff(d).substr(1);
+		   if(d=='1') {
+			art.dialog({
+			    content:"Requested for listing successfully. The listing and token offer will be initiated immediately.",
+			    ok:function(){
+				localStorage.is_del=0;
+				localStorage.listing=JSON.stringify({ id:window.proposal,asset:"{$goods_no}",name:"{$name}",limit:{$store_nums},price:{$sell_price} });
+				location.href=eurl("process.php?module=site&action=products_frame&id="+window.proposal);
+			    }
+			});
+		   }
+		   else {
+			$("#uploading").hide();
+			alert("Request failed !");
+		   }
+		}
+	   });
+	},
+	cancel:function(){ $("#uploading").hide() }
+   });
+}
+
+</script>
+
+
+{js:artTemplate}
+<script type="text/javascript" src="{webroot:public/javascript/products.js}?<?php echo $GLOBALS['_config']['products.js'] ?>"></script>
+<div id="pageInfo" data-title="Token"></div>
+<script src="{theme:javascript/jquery.slider.js}"></script>
+
+
+<style>
+
+.ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+}
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid #2980b9;
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 15px 0;
+  background-color: #03c04a;	//#3498db;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  color: #fff;
+  font: 700 18px/1 'Lato', sans-serif;
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.ribbon-top-left {
+  top: -10px;
+  left: -10px;
+}
+.ribbon-top-left::before,
+.ribbon-top-left::after {
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.ribbon-top-left::before {
+  top: 0;
+  right: 0;
+}
+.ribbon-top-left::after {
+  bottom: 0;
+  left: 0;
+}
+.ribbon-top-left span {
+  right: -25px;
+  top: 30px;
+  transform: rotate(-45deg);
+}
+
+</style>
+
+
+<section id="productsection" style="position:absolute;top:0">
+    <!--ID-->
+    <!--input type='hidden' id='product_id' alt='ID' value='' /-->
+
+{set:$iframe=strpos($content,'</iframe>')===false?"":("<iframe".explode('</iframe>',explode('<iframe',$content)[1])[0]."</iframe>");}
+
+    <!-- -->
+    <section class="goods_foucs">
+
+
+<div class="ribbon ribbon-top-left" style="z-index:99"><span>TEST ONLY</span></div>
+
+
+	{if:isset($iframe) && $iframe}
+	{set:$content=str_replace($iframe,"",$content);}
+	{$iframe}
+	{else:}
+        <ul>
+            {foreach:items=$photo}
+            <li class="swiper-slide"><img src="{url:/pic/thumb/img/$item['img']/w/450/h/450}" alt=""></li>
+            {/foreach}
+        </ul>
+	{/if}
+    </section>
+
+
+<section id="progress_section">
+<style>
+#progress {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+#progress-bar {
+  position: absolute;
+  background: lightseagreen;
+  height: 5px;
+  width: 0%;
+  top: 40%;
+  left: 0;
+}
+#progress-num {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+#progress-num::before {
+  content: "";
+  background-color: lightgray;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  z-index: -1;
+}
+#progress-num .step {
+  border: 3px solid lightgray;
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  background-color: #fff;
+  font-family: sans-serif;
+  font-size: 14px;    
+  position: relative;
+  z-index: 1;
+}
+#progress-num .step.active {
+  border-color: lightseagreen;
+  background-color: lightseagreen;
+  color: #fff;
+}
+#progress-num div {
+  text-align: center;
+  width: 20%;
+}
+#progress-num div .stats {
+  font-size: 0.15rem;
+  color: deeppink;
+}
+</style>
+
+
+<script>
+   var upvotes_required=100,	//also change 'voters' below for 'getProposalPolls'
+   polls_required=80,		//percentage of yes votes
+   panel_required=5,		//also change 'voters' below for 'getProposalReviews'
+   review_required=80,		//percentage
+   contract_required=100;	//percentage
+
+{set:$TUV=Api::run('getProposalUpvotes', array('proposal' => $id));}
+{set:$UUV=Api::run('getProposalUserUpvote', array('proposal' => $id,'userid' => $this->user['user_id']));}
+{set:$TP =Api::run('getProposalPolls', array('proposal' => $id, 'voters' => 100));}
+{set:$TR =Api::run('getProposalReviews', array('proposal' => $id, 'voters' => 5));}
+{set:$TL =Api::run('getProposalContracts', array('proposal' => $id, 'voters' => 1));}
+
+   var tuv={$TUV}, tp={$TP}, tr={$TR}, tl={$TL}, 
+   active={$is_del}-3, active_value=[tuv,tp,tr,tl], 
+   max_value=[upvotes_required, polls_required, review_required, contract_required, 100],
+   offsetbar=[5,4,2,0,0];
+
+   if(active<0)active=5;
+</script>
+
+
+<div id="progress">
+  <div id="progress-bar"></div>
+  <ul id="progress-num">
+    <li class="step">1</li>
+	<div>Upvote<br><br>
+	<span class="stats" id="upvote" {if:$is_del!=3 && $seller_id!=$this->user['user_id']}onclick="upvote()"{/if}>
+	{if:$is_del!=3 && $seller_id!=$this->user['user_id']}
+	<i class="fa {if:$UUV}fa-thumbs-up{else:}fa-thumbs-o-up{/if}"></i> 
+	{/if}
+	{if:$is_del!=3}{$TUV}{/if}
+	</span></div>
+    <li class="step">2</li>
+	<div>Polls<br><br>
+	<span class="stats">
+	{if:$is_del==0 || $is_del>4}{$TP}%{/if}
+	</span></div>
+    <li class="step">3</li>
+	<div>Review<br><br>
+	<span class="stats">
+	{if:$is_del==0 || $is_del>5}{$TR}%{/if}
+	</span></div>
+    <li class="step">4</li>
+	<div>Contract<br><br>
+	<span class="stats">
+	{if:$is_del==0 || $is_del>6}{$TL}%{/if}
+	</span></div>
+    <li class="step">5</li>
+  </ul>
+</div>
+
+<script>
+function updateProgress(){
+   var	progressBar = document.getElementById("progress-bar"),
+	steps = document.querySelectorAll(".step");
+  // toggle active class on list items
+  steps.forEach((step, i) => {
+    if (i < active) {
+      step.classList.add("active");
+    } else {
+      step.classList.remove("active");
+    }
+  });
+  // set progress bar width
+  progressBar.style.width = ((active - 1) / (steps.length - 1)) * 100 + (Math.min(active_value[active-1]||0,max_value[active-1]) / max_value[active-1]) * 20 + offsetbar[active-1] + "%";
+}
+
+
+updateProgress();
+
+</script>
+
+</section>
+
+
+    <section class="good_info">
+		<header class="good_info_title">
+			<h1>{$name}</h1>
+			<p>
+				Token ID<span id="data_goodsNo">{echo:$goods_no?$goods_no:$id}</span>
+
+<span class='fr'>Tokenization: {$unit}%</span>
+
+				{if:IClient::isMini() == true}
+				<a style="float:right;" href="javascript:placardsGoods({$id});"><i class="fa fa-share"></i></a>
+				{/if}
+			</p>
+
+			<!---->
+			{if:isset($activeTemplate)}
+			{include:$activeTemplate}
+			{/if}
+
+			<!--  -->
+			{if:$promo == ''}
+				{if:$group_price}
+				<!---->
+				<em class="price"><span id="data_groupPrice">{$group_price}</span></em>
+				{else:}
+				<!---->
+				<em class="price"><span id="data_sellPrice">{echo:number_format($sell_price,2)}</span></em>
+				{/if}
+				<!--  -->
+				<!--del class="delprice"><span id="data_marketPrice">{$market_price}</span></del-->
+
+{set:$MP=number_format($market_price,2)}
+{set:$NAM=number_format(($store_nums*$market_price/($unit/100)) / $cost_price,1)}
+{set:$NEM=number_format(($store_nums*$market_price/($unit/100)) / $weight,1)}
+<script>var nam={$NAM},nem={$NEM};</script>
+<em class="price" style="color:grey;padding-left:10px">USD<span id="data_marketPrice">{$MP}</span></em>
+<em class='fr' style="color:red;font-size:0.15rem">P/E Ratio: {$NEM}x</em>
+
+			{/if}
+		</header>
+		<!--  -->
+		<section class="goods_tip">
+			{set:$goodsTicketList = Api::run('getFreeTicketList','',$id)}
+			{if:$this->user && $goodsTicketList}
+			<div class="ticket-container">
+				{foreach:items=$goodsTicketList item=$ticketItem}
+				<span class="ticket-item">{echo:str_replace(".00","",$ticketItem['value'])}</span>
+				{if:$key>=2}{set:break;}{/if}
+				{/foreach}
+				<span class="ticket-button" onclick="showTicket();"> ></span>
+			</div>
+			{/if}
+
+			<p><em class="fr">Max Supply: <span id="data_storeNums">{$store_nums}</span> </em>Current Value: 
+
+{if:$is_del!=0}(Not listed)
+{else:}
+{set:$prices=Api::run('getProductPrice',array("proposal" => $id));}
+{foreach:items=$prices}{/foreach}
+<span style="color:red">{echo:number_format($item['current_price'],2)}</span>
+{/if}</p>
+
+{set:$AV=number_format($cost_price,0,'.',',')}
+{set:$NE=number_format($weight,0,'.',',')}
+<p><em class="fr">{$NAM}x</em><em>Asset Valuation: USD {$AV}</em></p>
+<p><em class="fr">{$NEM}x</em><em>Annual Net Earnings: USD {$NE}</em></p>
+
+			<!--p><em>Panel Review: </em><em class="star star_{echo:Common::gradeWidth($grade,$comments)}"></em></p-->
+<p><em>Panel Review: </em><em class="star star_{echo:floor($TR/20)}"></em></p>
+		</section>
+
+		<section class="good_type">
+
+			{if:$spec_array}
+			<!-- -->
+			{foreach:items=JSON::decode($spec_array)}
+			<dl>
+				<dt>{$item['name']}</dt>
+				<dd class="item">
+					{foreach:items=$item['value'] item=$spec_value key=$specValueKey}
+					{set:list($item['value'],$item['image'])=[key($spec_value),current($spec_value)]}
+					{if:$item['image']}
+
+					<!--  -->
+					<span  specId="{$item['id']}" id="{$item['id']}{$specValueKey}" title="{echo:htmlspecialchars($item['value'])}" style="background:url({url:$item['image']}) center no-repeat;background-size:contain;width:55px;height:55px;"></span>
+
+					{else:}
+
+					<!--  -->
+					<span  specId="{$item['id']}" id="{$item['id']}{$specValueKey}" title="{echo:htmlspecialchars($item['value'])}">{$item['value']}</span>
+
+					{/if}
+					<script>$('#{$item['id']}{$specValueKey}').data('specData',{echo:JSON::encode($item)});</script>
+					{/foreach}
+				</dd>
+			</dl>
+			{/foreach}
+			<!-- -->
+			{/if}
+			<!--  -->
+			<!--  -->
+			<!--dl>
+				<dt></dt>
+				<dd>
+					<div class="quantity">
+						<em class="sub" id="buyReduceButton">-</em>
+						<input class="num" id="buyNums" type="number" value="1">
+						<em class="add" id="buyAddButton">+</em>
+					</div>
+				</dd>
+			</dl-->
+		</section>
+		<!-- >
+		{if:isset($seller)}
+		{set:plugin::trigger("onServiceButton",$seller['id'])}
+		<section class="goods_seller">
+			<a href="{url:/site/home/id/$seller_id}">
+				<h3>{$seller['true_name']}</h3>
+				<div class="star_box">
+					<span class="star star_{echo:Common::gradeWidth(statistics::gradeSeller($seller['id']))}"></span>
+				</div>
+			</a>
+		</section>
+		{/if}
+		<!-- -->
+
+		<!--section class="goods_rec">
+			<h3></h3>
+			<ul>
+				{foreach:items = Api::run('getCommendRecom',4)}
+				<li>
+					<a href="{url:/site/products/id/$item['id']}">
+						<img data-src="{url:/pic/thumb/img/$item[img]/w/100/h/100}" alt="{$item['name']}">
+						<h4>{$item['name']}</h4>
+						<em>{$item['sell_price']}</em>
+					</a>
+				</li>
+				{/foreach}
+			</ul>
+		</section-->
+
+				{if:isset($content) && $content}
+			    <article class="article_detail">{$content}</article>
+				{/if}
+
+	</section>
+</section>
+
+<footer id="viewport_bottom">
+	<div class="btn_bottom_goods">
+		<div class="small_tr">
+			{if:$this->user}
+			<em onclick="favorite_add_ajax({$id},this);">
+				<i class="fa fa-heart"></i>
+			</em>
+			{else:}
+			<a href="{url:/}">
+				<i class="fa fa-home"></i>
+			</a>
+			{/if}
+		</div>
+		<div class="big_tr" style="width:85%">
+			<!--span><a href="{url:/simple/arrival/goods_id/$id}"><em class="buy"></em></a></span-->
+
+{if:$is_del==3}
+   <span><a href="{url:/seller/goods_edit/id/$id}" target="_parent"><em class="buy">Edit Proposal</em></a></span>
+   <span><a onclick="submit()"><em class="cart">Submit Proposal</em></a></span>
+{/if}
+
+{if:$is_del==4}
+   {if:$seller_id!=$this->user['user_id']}
+   <span><a onclick="localStorage.click='forum/t/'+'token_{$id}_'"><em class="buy">Ask Me Anything</em></a></span>
+   <span><a onclick="upvote()"><em class="cart">Upvote <zz id="upvote">
+				<i class="fa {if:$UUV}fa-thumbs-up{else:}fa-thumbs-o-up{/if}"></i> 
+				{$TUV}</zz></em></a></span>
+   {else:}
+   <span><a onclick="localStorage.click='forum/t/'+'token_{$id}_'"><em class="buy">Investors' Queries</em></a></span>
+   <span><a onclick="polls()"><em class="cart">Commence Polls</em></a></span>
+   {/if}
+{/if}
+
+{if:$is_del==5}
+   {if:$seller_id!=$this->user['user_id']}
+   <span><a onclick="localStorage.click='forum/t/'+'token_{$id}_'"><em class="buy">Ask Me Anything</em></a></span>
+   <!--span><a onclick="localStorage.click='forum/d/{$model_id}-'+'{$name}'.replaceAll(' ','-')+'-polls_{$id}_'"><em class="cart">Investors Polls</em></a></span-->
+   <span><a onclick="localStorage.click='forum/d/{$model_id}-polls_{$id}_'"><em class="cart">Investors Polls</em></a></span>
+   {else:}
+   <span><a onclick="localStorage.click='forum/t/'+'token_{$id}_'"><em class="buy">Investors' Queries</em></a></span>
+   <span><a onclick="review()"><em class="cart">Request Review</em></a></span>
+   {/if}
+{/if}
+
+{if:$is_del==6}
+   {if:$seller_id!=$this->user['user_id']}
+   <span><a onclick="localStorage.click='forum/t/'+'token_{$id}_'"><em class="buy">Ask Me Anything</em></a></span>
+   <!--span><a onclick="localStorage.click='forum/d/{$brand_id}-'+'{$name}'.replaceAll(' ','-')+'-review_{$id}_'"><em class="cart">Panel Review</em></a></span-->
+   <span><a onclick="localStorage.click='forum/d/{$brand_id}-review_{$id}_'"><em class="cart">Panel Review</em></a></span>
+   {else:}
+   <!--span><a onclick="localStorage.click='forum/d/{$brand_id}-'+'{$name}'.replaceAll(' ','-')+'-review_{$id}_'"><em class="buy">Panel's Queries</em></a></span-->
+   <span><a onclick="localStorage.click='forum/d/{$brand_id}-review_{$id}_'"><em class="buy">Panel's Queries</em></a></span>
+   <span><a onclick="contract()"><em class="cart">Request Contract</em></a></span>
+   {/if}
+{/if}
+
+{if:$is_del==7}
+   {if:$seller_id!=$this->user['user_id']}
+   <span><a onclick="localStorage.click='forum/t/'+'token_{$id}_'"><em class="buy">Ask Me Anything</em></a></span>
+   <!--span><a onclick="localStorage.click='forum/d/{$active_id}-'+'{$name}'.replaceAll(' ','-')+'-contract_{$id}_'"><em class="cart">Legal Contract</em></a></span-->
+   <span><a onclick="localStorage.click='forum/d/{$active_id}-contract_{$id}_'"><em class="cart">Legal Contract</em></a></span>
+   {else:}
+   <!--span><a onclick="localStorage.click='forum/d/{$active_id}-'+'{$name}'.replaceAll(' ','-')+'-contract_{$id}_'"><em class="buy">Legal Queries</em></a></span-->
+   <span><a onclick="localStorage.click='forum/d/{$active_id}-contract_{$id}_'"><em class="buy">Legal Queries</em></a></span>
+   <span><a onclick="listing()"><em class="cart">Request Listing</em></a></span>
+   {/if}
+{/if}
+
+{if:$is_del==0}
+   <span onclick="localStorage.click='trade',localStorage.gotrade=window.proposal"><em class="buy">Invest in this token</em></span>
+{/if}
+
+			<!--span id="buyNowButton"><em id="buyNowText" class="buy"></em></span>
+			<span id="joinCarButton"><em class="cart"></em></span-->
+		</div>
+		<!--div class="small_tr">
+			<a href="{url:/simple/cart}">
+				<i class="fa fa-shopping-cart"></i>
+			</a>
+		</div-->
+	</div>
+</footer>
+<script>
+$(function(){
+
+window.proposal={$id}; localStorage.proposer={$seller_id}; localStorage.is_del={$is_del};
+
+if(localStorage.listing) localStorage.click='trade';
+
+
+$(".header").hide();
+$('#img_loading').hide();
+
+	//
+//	var productInstance = new productClass("{$id}","{$this->user['user_id']}","{$promo}","{$active_id}","{$type}");
+	// 
+	$(".goods_foucs").MobileSlider({width:720,height:720});
+	$(".article_detail").find('*').each(function(){
+		var t = $(this);
+		if (t.attr("style")){t.attr("style","")};
+		if (t.attr("width")){t.attr("width","")};
+		if (t.attr("height")){t.attr("height","")};
+	});
+})
+</script>

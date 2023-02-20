@@ -1,0 +1,16 @@
+
+<div id="pageInfo" data-title="Categories"></div>
+<!-- -->
+
+<section class="map_list">
+	{foreach:items=Api::run('getCategoryListTop') item=$first }
+	<dl>
+		<dt><a href="{url:/site/pro_list/cat/$first[id]}">{$first['name']}</a></dt>
+		<dd>
+			{foreach:items=Api::run('getCategoryByParentid',array('#parent_id#',$first['id'])) item=$second}
+			<a href="{url:/site/pro_list/cat/$second[id]}">{$second['name']}</a>
+			{/foreach}
+		</dd>
+	</dl>
+	{/foreach}
+</section>

@@ -1,0 +1,26 @@
+{set:$callback = plugin::trigger('getCallback')}
+<div id="pageInfo" data-title=""></div>
+
+<section class="nothing">
+    <i class="fa fa-check green"></i>
+    <p id="message" class="green">, {echo:IReq::get('message') ? IFilter::act(IReq::get('message'),'text') : ''} ?</p>
+    <div class="tips">
+    	{if:$callback}
+    	<a href="{url:$callback}"></a>
+    	{/if}
+        <a href="{url:/ucenter/index}"></a>
+        <a href="{url:/site/index}"></a>
+    </div>
+
+<p id="test" class="red" style="display:none;margin-top:100px"><br> wallet.pi </p>
+
+</section>
+
+<script>
+{if:$callback}
+    $('#pageInfo').attr('data-goback','{url:$callback}');
+{/if}
+
+//if($('#message').html().includes('')) $('#test').show();
+
+</script>

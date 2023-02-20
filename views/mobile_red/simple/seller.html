@@ -1,0 +1,131 @@
+{js:artTemplate}
+{js:areaSelect}
+
+<div id="pageInfo" data-title="" data-goback="{url:/ucenter/index}"></div>
+<section class="input_li">
+
+<p style="color:red;font-size:14px;line-height:18px">
+: 
+</p>
+<br>
+<p style="color:purple;font-size:14px;line-height:18px">
+: 
+
+
+</p>
+<br>
+
+	<form id="sellerform" action="{url:/simple/seller_reg}" method="post" enctype='multipart/form-data' name="sellerForm" onsubmit="return beforesubmit()">
+		<ul>
+			<li>
+				<span style="display:none" class="input_item"> <em>*</em></span>
+				<input class="input_text" name="seller_name" type="hidden" value="{$this->user['username']}" pattern="required" alt="" />
+				<input class="input_text" name="password" type="hidden" bind='repassword' value="aa123456" pattern="required" />
+				<input class="input_text" name="repassword" type="hidden" bind='password' value="aa123456" pattern="required" />
+			</li>
+			<!--li>
+				<span style="display:none" class="input_item"> <em>*</em></span>
+				<input class="input_text" name="password" type="hidden" bind='repassword' value="aa123456" pattern="required" />
+			</li>
+			<li>
+				<span style="display:none" class="input_item"> <em>*</em></span>
+				<input class="input_text" name="repassword" type="hidden" bind='password' value="aa123456" pattern="required" />
+			</li-->
+			<li>
+				<span class="input_item"> <em>*</em></span>
+				<input class="input_text" name="true_name" type="text" value="" pattern="required" alt="" />
+			</li>
+			<li>
+				<span class="input_item"> <em>*</em></span>
+				<input class="input_file" type='file' accept="image/*" name='paper_img' pattern="required" />
+			</li>
+			<li>
+				<span class="input_item"> <em>*</em></span>
+				<input class="input_text" name="address" type="text" value="" pattern="required" />
+			</li>
+			<!--li>
+				<span class="input_item"> <em>*</em></span>
+				<input type="text" class="input_text" name="phone" pattern="phone" alt="" />
+			</li-->
+			<li>
+				<span class="input_item"> <em>*</em></span>
+				<input type="text" class="input_text" name="mobile" pattern="mobi" alt="" />
+			</li>
+			<!--li>
+				<span class="input_item"> <em>*</em></span>
+				<input type="text" class="input_text" name="email" pattern="email" alt="" />
+			</li-->
+
+<li>
+	<span class="input_item"> <em>*</em></span>
+	<input class="input_file" type='file' accept="image/*" name='weixin' pattern="required" />
+</li>
+
+			<!--li>
+				<span class="input_item"> <em>*</em></span>
+				<select class="input_select f3" name="province" child="city,area"></select>
+				<select class="input_select f3" name="city" child="area"></select>
+				<select class="input_select f3" name="area"></select>
+			</li-->
+
+<li>
+	<span class="input_item"> <em>*</em></span>
+	<input type="text" class="input_text" name="person_name" pattern="required" />
+</li>
+<li>
+	<span class="input_item"> <em>*</em></span>
+	<input class="input_file" type='file' accept="image/*" name='person_id' pattern="required" />
+</li>
+
+			<li>
+				<span class="input_item"></span>
+				<input class="input_text" name="home_url" type="text" pattern="url" empty value="" />
+			</li>
+			<li>
+				<input type="submit" class="input_submit" value="" id="submit">
+			</li>
+
+		</ul>
+	</form>
+</section>
+<script>
+//DOM
+/*
+$(function(){
+	var areaInstance = new areaSelect('province');
+	areaInstance.init();
+});
+*/
+
+function beforesubmit(){
+   if(checkform()) {
+	$('#uploading')[0].style.display='flex';
+	return true;
+   }
+   else return false;
+}
+
+function checkform(e){
+   function checkimage(f){
+	var inp=document.getElementsByName(f)[0];
+	if(inp.value=='') return false;
+	if (/.jpg|.jpeg|.png/.test(inp.value.toLowerCase())) {
+		inp.style.boxShadow = "0 0 0 1px #ededed";
+		return true;
+	}
+	else {
+		alert(", jpg/jpeg/png");
+		inp.style.boxShadow = "0 0 0 1px #dd0000";
+		return false;
+	}
+   }
+
+  if(!checkimage('paper_img')) return false;
+  if(!checkimage('weixin')) return false;
+  if(!checkimage('person_id')) return false;
+  return true;
+}
+
+$("#sellerform")[0].addEventListener('submit', checkform);
+
+</script>

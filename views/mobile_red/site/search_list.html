@@ -1,0 +1,117 @@
+{set:$defaultWhere = array('search' => $this->word, 'category_extend' => $this->cat_id)}
+{set:$goodsObj = search_goods::find($defaultWhere,10);$resultData = $goodsObj->find();}
+
+<div id="pageInfo" data-title="{$this->word}" data-goback="{url:/site/index}"></div>
+
+{set:$activeitems=Api::run('getActiveProductsByKeyword',array("user" => "%", "keyword" => $this->word));}
+{if:$activeitems}
+<h2 class="home_h2">
+    <strong><i class="fa fa-line-chart"></i>Active Tokens</strong>
+</h2>
+<section class="home_tuan_goods">
+    <ul>
+        {foreach:items = $activeitems}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/200/h/200}" alt="{$item['name']}">
+                <h3>{$item['name']}</h3>
+                <em>{echo:number_format($item['current_price'],4)}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{/if}
+
+
+{set:$upvoteitems=Api::run('getSellerProductsByKeyword',array("status" => 4, "user" => "%", "keyword" => $this->word));}
+{if:$upvoteitems}
+<h2 class="home_h2">
+    <strong><i class="fa fa-thumbs-up"></i>Upvote</strong>
+</h2>
+<section class="home_hui_goods">
+    <ul>
+        {foreach:items = $upvoteitems}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/100/h/100}" alt="{$item['name']}">
+                <h3>{$item['name']}</h3>
+                <em>{$item['sell_price']}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{/if}
+
+
+{set:$pollitems=Api::run('getSellerProductsByKeyword',array("status" => 5, "user" => "%", "keyword" => $this->word));}
+{if:$pollitems}
+<h2 class="home_h2">
+    <strong><i class="fa fa-tags"></i>Polls</strong>
+</h2>
+<section class="home_hui_goods">
+    <ul>
+        {foreach:items = $pollitems}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/100/h/100}" alt="{$item['name']}">
+                <h3>{$item['name']}</h3>
+                <em>{$item['sell_price']}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{/if}
+
+
+{set:$reviewitems=Api::run('getSellerProductsByKeyword',array("status" => 6, "user" => "%", "keyword" => $this->word));}
+{if:$reviewitems}
+<h2 class="home_h2">
+    <strong><i class="fa fa-search"></i>Review</strong>
+</h2>
+<section class="home_hui_goods">
+    <ul>
+        {foreach:items = $reviewitems}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/100/h/100}" alt="{$item['name']}">
+                <h3>{$item['name']}</h3>
+                <em>{$item['sell_price']}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{/if}
+
+
+{set:$contractitems=Api::run('getSellerProductsByKeyword',array("status" => 7, "user" => "%", "keyword" => $this->word));}
+{if:$contractitems}
+<h2 class="home_h2">
+    <strong><i class="fa fa-certificate"></i>Contracts</strong>
+</h2>
+<section class="home_hui_goods">
+    <ul>
+        {foreach:items = $contractitems}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/100/h/100}" alt="{$item['name']}">
+                <h3>{$item['name']}</h3>
+                <em>{$item['sell_price']}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{/if}
+
+
+{if:$upvoteitems||$pollitems||$reviewitems||$contractitems||$activeitems}
+{else:}
+<div style="text-align:center;color:grey">
+<br><br><br>No proposals yet with this keyword<br><br><br>
+</div>
+{/if}
+

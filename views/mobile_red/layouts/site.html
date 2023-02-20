@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>{echo:$this->_siteConfig->name}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link type="image/x-icon" href="{webroot:favicon.ico}" rel="icon">
+	<link rel="apple-touch-icon-precomposed" href="{skin:image/logo.gif}">
+
+<script type="text/javascript" charset="UTF-8" src="{webroot:jquery.min.js}?<?php echo $GLOBALS['_config']['jquery'] ?>"></script>
+
+	{js:form}
+
+<script src="{webroot:runtime/_systemjs/autovalidate/validate.js}?<?php echo $GLOBALS['_config']['validate.js'] ?>"></script>
+
+<script src="{webroot:runtime/_systemjs/artdialog/artDialog.js}"></script>
+<script src="{webroot:runtime/_systemjs/artdialog/plugins/iframeTools.js}?<?php echo $GLOBALS['_config']['iframeTools.js'] ?>"></script>
+<link rel="stylesheet" href="{webroot:runtime/_systemjs/artdialog/skins/white.css}" />
+
+	{js:artTemplate}
+	<script src="{theme:javascript/site.js}?<?php echo $GLOBALS['_config']['site.js'] ?>"></script>
+	<script src="{theme:javascript/mobile.js}?<?php echo $GLOBALS['_config']['mobile.js'] ?>"></script>
+	<script src="{webroot:public/javascript/public.js}?<?php echo $GLOBALS['_config']['public.js'] ?>"></script>
+	{js:layer_mobile}
+	{js:lazyLoad}
+	<link rel="stylesheet" href="{skin:style/style.css}?<?php echo $GLOBALS['_config']['style.css'] ?>">
+</head>
+<body>
+	<!-- 4.7  http://fontawesome.io/icons/ -->
+	{if:IWeb::$app->getController()->getId() == 'site' && IWeb::$app->getController()->getAction()->getId() == 'index'}
+	<header class="home_header">
+		<h1 class="logo"><img src="{if:$this->_siteConfig->logo}{webroot:$this->_siteConfig->logo}{else:}{skin:image/T-logo.jpg}{/if}" style="border-radius:50%"></h1>
+		<div class="so" id="openSearch">
+			<i class="fa fa-search"></i>
+			<p>
+				{foreach:items=Api::run('getKeywordList',3) }
+				{set:$tmpWord = urlencode($item['word']);}
+				{$item['word']}
+				{/foreach}
+			</p>
+		</div>
+		<div class="head_menu" id="openNav">
+			<i class="fa fa-bars"></i>
+		</div>
+	</header>
+	{else:}
+	<header class="header_layout">
+		<div class="header">
+			<h1 class="page_name" id="pageName">Loading ...</h1>
+			<div class="go_back" id="goBack"><i class="fa fa-chevron-left"></i></div>
+			<div class="head_menu" id="openNav"><i class="fa fa-bars"></i></div>
+		</div>
+	</header>
+	{/if}
+	<section class="search_box" id="searchBody">
+		<header class="search_header">
+			<form method='get' action="{url:/site/index}">
+				<div class="close"></div>
+				<input type='hidden' name='controller' value='site'>
+				<input type='hidden' name='action' value='search_list'>
+				<input class="keywords" type="text" name='word' autocomplete="off" placeholder="Enter keyword...">
+				<label class="submit">
+					<i class="fa fa-search"></i>
+					<input type="submit" value="">
+				</label>
+			</form>
+		</header>
+		<div class="search_hot">
+			<h3>Hot search</h3>
+			{foreach:items=Api::run('getKeywordList') }
+			{set:$tmpWord = urlencode($item['word']);}
+			<a href="{url:/site/search_list/word/$tmpWord}">{$item['word']}</a>
+			{/foreach}
+
+<br><br><br><br>
+<h3></h3>
+{foreach:items=Api::run('getVipSellerList') }
+{set:$tmpWord = $item['id'];}
+<a href="{url:/site/home/id/$tmpWord}">{$item['true_name']}</a>
+{/foreach}
+
+		</div>
+	</section>
+	<nav class="nav" id="navBody">
+		<div class="close"></div>
+		<div class="nav_body">
+			<div class="user">
+				{if:$this->user}
+				{set:$user_ico = $this->user['head_ico']}
+				<a href="{url:/ucenter/index}"><img src="{url:$user_ico}" onerror="this.src='{skin:image/user_ico.png}'" alt="{$this->user['username']}"></a>
+				<span>Welcome <strong>{$this->user['username']}</strong> </span>
+				{else:}
+				<a href="{url:/ucenter/index}"><img src="{skin:image/user_ico.png}" alt=" Pi "></a>
+				<!--a href="{url:simple/login}" class="go_login"></a-->
+				{/if}
+			</div>
+			<ul class="nav_menu">
+				<li><a href="{url:/site/index}"><i class="fa fa-home"></i> <span>Home page</span></a></li>
+				<li><a href="{url:/site/sitemap}"><i class="fa fa-reorder"></i> <span>Categories</span></a></li>
+				<!--li><a href="{url:/simple/cart}"><i class="fa fa-briefcase"></i> <span>My Proposals</span></a></li-->
+				<li><a href="{url:/seller/goods_edit}"><i class="fa fa-plus"></i> <span>Add New Proposal</span></a></li>
+				<li><a href="{url:ucenter/favorite}"><i class="fa fa-star"></i> <span>My Favorites</span></a></li>
+				<li><a href="{url:ucenter/investment}"><i class="fa fa-line-chart"></i> <span>My Investment</span></a></li>
+				<li><a href="{url:/ucenter/index}"><i class="fa fa-user"></i> <span>My User Center</span></a></li>
+			</ul>
+		</div>
+	</nav>
+	{viewcontent}
+
+<div id="uploading" style="display:none;position:fixed;left:0;top:0;width:100%;height:100%;opacity:80%;background:#fff;text-align:center;justify-content:center;align-items:center;font-size:20px;z-index:99">
+<ul><li id="img_loading"><img src="loading.gif"></li><li id="text_loading">Uploading ...</li></ul>
+</div>
+
+</body>
+</html>
+<script>
+
+$(function(){
+	// 
+	var $searchBody= $("#searchBody");
+	$("#openSearch").on('click',function(){
+		$searchBody.show();
+	})
+	$searchBody.on('click','.close',function(){
+		$searchBody.hide();
+	})
+	// 
+	var $navBody = $("#navBody");
+	$("#openNav").on('click',function(){
+		$navBody.addClass("open");
+	})
+	$navBody.on('click','.close',function(){
+		$navBody.removeClass("open");
+	})
+})
+
+
+</script>

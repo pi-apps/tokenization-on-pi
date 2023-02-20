@@ -1,0 +1,250 @@
+{js:artTemplate}
+<!--script type="text/javascript" src="{webroot:public/javascript/products.js}?<?php echo $GLOBALS['_config']['products.js'] ?>"></script-->
+<div id="pageInfo" data-title="Token" data-goback="{url:/site/index}"></div>
+<!--script src="{theme:javascript/jquery.slider.js}"></script-->
+
+
+<section>
+    <!--ID-->
+    <input type='hidden' id='product_id' alt='ID' value='' />
+
+		<section class="pro_tab">
+			<ul>
+				<li class="on">Proposition</li>
+				<li id="forum">Investor Forum</li>
+				<li id="trade">Live Trading</li>
+			</ul>
+		</section>
+		<section class="pro_con">
+			<div class="con">
+
+<div id="divproduct" style="position:absolute;left:0%;top:0px;width:100%;height:100%;background-color:black;text-align:center">
+<iframe id="frameproduct" src="" border="0" frameborder="0" style="width:100%;height:100%;border-style:none;overflow:hidden" frameBorder="0" scrolling="yes"></iframe>
+</div>
+
+			</div>
+			<div class="con none">
+				<div id='commentBox'></div>
+				<script type='text/html' id='commentRowTemplate'>
+				<div class="commet">
+					<div class="user">
+						<img src="<%=webroot(head_ico)%>" onerror="this.src='{skin:image/user_ico.png}'" />
+					</div>
+					<dl class="desc">
+						<%=contents%>
+
+            			<%if(img_list){%>
+            			<%var img_list = JSON().parse(img_list);%>
+            			<p>
+            			<% for(var i in img_list){%>
+            			    <!--a href="<%=webroot(img_list[i])%>" target="_blank"><img class="img-thumbnail" style="width:52px;height:52px;border:1px solid #ccc;margin-bottom:4px;" src="<%=webroot(img_list[i])%>" /></a-->
+<img class="img-thumbnail" style="width:52px;height:52px;border:1px solid #ccc;margin-bottom:4px;" src="<%=webroot(img_list[i])%>" />
+                        <% } %>
+            			</p>
+            			<%}%>
+					</dl>
+				</div>
+				<%if(recontents){%>
+					<div class="recommet">
+						<div class="user"><img src="{skin:image/admin_ico.png}"></div>
+						<div class="desc"><%=recontents%></div>
+					</div>
+				<%}%>
+				</script>
+
+<div id="divforum" style="position:absolute;left:0%;top:0px;width:100%;height:100%;background-color:black;text-align:center">
+<div id="loadforum" style="position:absolute;width:100%;height:100%;display:flex;
+justify-content:center;
+align-items:center;">
+<!--img src="loading-ice.gif" width="120" height="120"-->
+	<div class="djIKvp">
+	<div color="rgba(242,48,48,1)" class="cnzOTe"></div>
+	<div color="rgba(255,121,25,1)" class="hbpIqB"></div>
+	<div color="rgba(235,197,12,1)" class="exCUYm"></div>
+	<div color="rgba(61,153,245,1)" class="eRdNpd"></div>
+	<div color="rgba(0,204,68,1)" class="foJQxi"></div>
+	<div color="rgba(116,217,65,1)" class="jjjdfP"></div>
+	<div color="rgba(121,97,242,1)" class="eSvgmK"></div>
+	<div color="rgba(15,192,197,1)" class="kGVzIf"></div>
+	<div color="rgba(255,89,172,1)" class="laqbcJ"></div>
+	<div style="margin-top:10px;color:white">Loading...</div>
+	</div>
+</div>
+<iframe id="frameforum" src="" border="0" frameborder="0" style="width:100%;height:100%;border-style:none;overflow:hidden" frameBorder="0" scrolling="yes"></iframe>
+</div>
+
+			</div>
+			<div class="con none">
+				<div class="question_btn">
+					<a href="{url:/site/consult/id/$id}"></a>
+				</div>
+				<div id='referBox'></div>
+				<!--JS-->
+				<script type='text/html' id='referRowTemplate'>
+				<div class="commet">
+					<div class="user">
+						<img src="<%=webroot(head_ico)%>" onerror="this.src='{skin:image/user_ico.png}'" />
+					</div>
+					<dl class="desc">
+						<%=question%>
+					</dl>
+				</div>
+				<%if(answer){%>
+					<div class="recommet">
+						<div class="user"><img src="{skin:image/admin_ico.png}"></div>
+						<div class="desc"><%=answer%></div>
+					</div>
+				<%}%>
+
+				</script>
+
+<div id="divtrade" style="position:absolute;left:0%;top:0px;width:100%;height:100%;background-color:black;text-align:center">
+<div id="loadtrade" style="position:absolute;width:100%;height:100%;display:flex;
+justify-content:center;
+align-items:center;">
+<!--img src="loading-ice.gif" width="120" height="120"-->
+	<div class="djIKvp">
+	<div color="rgba(242,48,48,1)" class="cnzOTe"></div>
+	<div color="rgba(255,121,25,1)" class="hbpIqB"></div>
+	<div color="rgba(235,197,12,1)" class="exCUYm"></div>
+	<div color="rgba(61,153,245,1)" class="eRdNpd"></div>
+	<div color="rgba(0,204,68,1)" class="foJQxi"></div>
+	<div color="rgba(116,217,65,1)" class="jjjdfP"></div>
+	<div color="rgba(121,97,242,1)" class="eSvgmK"></div>
+	<div color="rgba(15,192,197,1)" class="kGVzIf"></div>
+	<div color="rgba(255,89,172,1)" class="laqbcJ"></div>
+	<div style="margin-top:10px;color:white">Loading...</div>
+	</div>
+</div>
+<iframe id="frametrade" src="" border="0" frameborder="0" style="width:100%;height:100%;border-style:none;overflow:hidden" frameBorder="0" scrolling="yes"></iframe>
+</div>
+
+			</div>
+		</section>
+</section>
+
+<script>
+var skipframe=false;
+function goframe(frame){
+   if(skipframe){ skipframe=false;return }
+   var f,u=frame.split('/'),p=$('.pro_tab');
+
+   if(u[0]=='product'){
+	var d=$("#divproduct"),f=$("#frameproduct");
+	d.css("top",(p[0].offsetTop+p[0].offsetHeight)+"px");
+	d.css("height",(window.innerHeight-(p[0].offsetTop+p[0].offsetHeight))+"px");
+	if(window.proposal!=localStorage.proposal) {
+		window.proposal=localStorage.proposal;
+		f[0].src=eurl("process.php?module=site&action=products_frame&id="+localStorage.proposal);
+	}
+   }
+   else if(u[0]=='forum'){
+	var d=$("#divforum"),f=$("#frameforum");
+	d.css("top",(p[0].offsetTop+p[0].offsetHeight)+"px");
+	d.css("height",(window.innerHeight-(p[0].offsetTop+p[0].offsetHeight))+"px");
+	if(u[1]&&u[2]) {
+		f[0].src=location.pathname.replace("/process.php","")+"/public/"+u[1]+"/"+u[2];
+		skipframe=true;  //prevent reentrant
+		document.getElementById(u[0]).click();
+	}
+	else if(localStorage.forum!=localStorage.proposal) {
+		f[0].src=location.pathname.replace("/process.php","")+"/public/t/token_"+localStorage.proposal+"_";
+	}
+   }
+   else if(u[0]=='trade'){
+	var d=$("#divtrade"),f=$("#frametrade");
+	d.css("top",(p[0].offsetTop+p[0].offsetHeight)+"px");
+	d.css("height",(window.innerHeight-(p[0].offsetTop+p[0].offsetHeight))+"px");
+	if(localStorage.trade!=localStorage.proposal) {
+		if(!localStorage.trade) f[0].src=location.pathname.replace("/process.php","")+"/demo";
+		else localStorage.gotrade=localStorage.proposal;
+		localStorage.trade=localStorage.proposal;
+	}
+	skipframe=true;  //prevent reentrant
+	document.getElementById(u[0]).click();
+   }
+}
+
+$(function(){
+
+localStorage.proposal={$id};
+window.proposal=localStorage.forum=localStorage.trade="";
+goframe("product");
+
+	$(".pro_tab").on('click', 'li', function(){
+		var t = $(this),i = t.index();
+		//
+		switch(i)
+		{
+			case 0:
+			{
+				toggle(true,t,i);
+
+goframe("product");
+
+			}
+			break;
+			case 1:
+			{
+
+if(localStorage.is_del==0 || localStorage.is_del>3){
+
+				toggle(false,t,i);
+//				productInstance.comment_ajax();
+
+if(!localStorage.forum) localStorage.welcomeHidden="";
+goframe("forum");
+var _forum=setInterval(function(){
+  if(localStorage.welcomeHidden) clearInterval(_forum),$("#loadforum").hide();
+},200);
+
+}
+else alert("Please complete this proposal and submit");
+
+			}
+			break;
+
+			case 2:
+			{
+
+if(localStorage.is_del==0 || localStorage.is_del>3){
+
+				toggle(false,t,i);
+//				productInstance.refer_ajax();
+
+if(!localStorage.trade) localStorage.loaded="";
+goframe("trade");
+var _trade=setInterval(function(){
+  if(localStorage.loaded) clearInterval(_trade),$("#loadtrade").hide();
+},200);
+
+}
+else alert("Please complete this proposal and submit");
+
+			}
+			break;
+		}
+	});
+	// 
+	function toggle(flag, t, i) {
+		t.addClass('on').siblings('li').removeClass('on');
+		$(".pro_con").children('.con').eq(i).removeClass('none').siblings('.con').addClass('none');
+		if (flag) {
+			$(".goods_foucs").show();
+			$(".pro_tab").prevAll().show();
+$("#viewport_bottom").show();
+		} else {
+			$(".goods_foucs").hide();
+			$(".pro_tab").prevAll().hide();
+$("#viewport_bottom").hide();
+		}
+	}
+
+
+localStorage.click='';
+setInterval(function(){if(localStorage.click)goframe(localStorage.click),localStorage.click=''},500);
+
+
+})
+
+</script>

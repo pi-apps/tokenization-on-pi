@@ -1,0 +1,10 @@
+<div id="pageInfo" data-title=""></div>
+
+<div class="tag_box">
+	{set:$classArray = array('bold orange','orange');$colorIndex=0;}
+	{foreach:items=Api::run('getKeywordAllList',50)}
+	{set:$keyword=urlencode($item['word']);}
+	<a href="{url:/site/search_list/word/$keyword}" class="{echo:$classArray[$colorIndex%count($classArray)]}">{$item['word']}</a>
+	{set:$colorIndex++;}
+	{/foreach}
+</div>

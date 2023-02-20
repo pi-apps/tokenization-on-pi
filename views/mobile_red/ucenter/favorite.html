@@ -1,0 +1,24 @@
+<div id="pageInfo" data-title="My Favorite" data-goback="{url:/site/index}"></div>
+
+<section class="goods_list">
+	<ul>
+        {set:$favoriteObj = Api::run('getFavorite',IReq::get('cat_id'));}
+		{foreach:items=$favoriteObj->find()}
+		<li>
+			<a href="{url:/site/products/id/$item['goods_id']}">
+				<i class="photo">
+					<img class="goods_photo" src="{url:/pic/thumb/img/$item[img]/w/140/h/140}" alt="{$item['name']}">
+				</i>
+				<h3 class="name"><strong>{$item['name']}</strong></h3>
+			</a>
+			<del class="del" onclick="delModel({link:'{url:/ucenter/favorite_del/id/$item['id']}',msg:'Remove favorite'});">
+				Remove
+			</del>
+		</li>
+		{/foreach}
+	</ul>
+</section>
+
+{if:!$items}
+<section class="nodata">You have not set any favorite yet !</section>
+{/if}

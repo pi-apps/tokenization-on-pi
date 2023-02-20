@@ -1,0 +1,234 @@
+<div id="pageInfo" data-title="User Center" data-goback="{url:/site/index}"></div>
+<section class="user_info">
+    <div class="user_info_ico">
+        <a href="javascript:$('#userIcoFile').trigger('click');">
+            <img id="user_ico_img" src="{url:$this->user['head_ico']}"  />
+            <strong>{$this->user['username']}</strong>
+            <em>{$user['mobile']}</em>
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+{set:$pibalance=Api::run('getPiBalance',array("user" => $_GET['u']))}
+{set:$tokenbalance=Api::run('getTokenBalance',array("user" => $_GET['u']))}
+
+    <div class="user_info_int">
+        <dl>
+            <dt>Pi balance</dt>
+            <dd>{echo:number_format($pibalance,2)}</dd>
+<!--br>
+<dt></dt>
+<dd>{$user['daka_balance']}</dd-->
+
+        </dl>
+        <dl>
+            <dt>User Level</dt>
+            <dd>{$user['group_name']}</dd>
+        </dl>
+        <dl>
+            <dt>Token value</dt>
+            <dd>{echo:number_format($tokenbalance,2)}</dd>
+<!--br>
+{if:$user['real_balance']>0}
+<dt></dt>
+<dd>{$user['real_balance']}</dd>
+{/if}
+-->
+
+        </dl>
+    </div>
+</section>
+<nav class="user_nav">
+    <ul>
+        {foreach:items=menuUcenter::init()}
+        {foreach:items=$item key=$moreKey item=$moreValue}
+        <li><a href="{url:$moreKey}"><i class="{echo:isset(menuUcenter::$ico[$moreValue])?menuUcenter::$ico[$moreValue]:'fa fa-question'}"></i><strong>{$moreValue}</strong></a></li>
+        {/foreach}
+        {/foreach}
+    </ul>
+</nav>
+{js:fileUpload}
+<input id="userIcoFile" style="display:none;" type="file" accept="image/*" name="userIcoFile" data-url="{url:/ucenter/user_ico_upload}" />
+
+
+{set:$draftitems=Api::run('getSellerProducts',array("status" => 3, "user" => $_GET['u']));}
+{if:$draftitems}
+<h2 class="home_h2">
+    <strong><i class="fa fa-clock-o"></i>My Draft Proposals</strong>
+</h2>
+
+<section class="home_hui_goods">
+    <ul>
+        {foreach:items=$draftitems}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/100/h/100}" alt="{$item['name']}">
+                <h3>{$item['name']}</h3>
+                <em>{$item['sell_price']}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{/if}
+
+
+{set:$upvoteitems=Api::run('getSellerProducts',array("status" => 4, "user" => $_GET['u']));}
+{if:$upvoteitems}
+<h2 class="home_h2">
+    <strong><i class="fa fa-thumbs-up"></i>My Upvoting Proposals</strong>
+</h2>
+<section class="home_hui_goods">
+    <ul>
+        {foreach:items = $upvoteitems}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/100/h/100}" alt="{$item['name']}">
+                <h3>{$item['name']}</h3>
+                <em>{$item['sell_price']}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{/if}
+
+
+{set:$pollitems=Api::run('getSellerProducts',array("status" => 5, "user" => $_GET['u']));}
+{if:$pollitems}
+<h2 class="home_h2">
+    <strong><i class="fa fa-tags"></i>My Polling Proposals</strong>
+</h2>
+<section class="home_hui_goods">
+    <ul>
+        {foreach:items = $pollitems}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/100/h/100}" alt="{$item['name']}">
+                <h3>{$item['name']}</h3>
+                <em>{$item['sell_price']}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{/if}
+
+
+{set:$reviewitems=Api::run('getSellerProducts',array("status" => 6, "user" => $_GET['u']));}
+{if:$reviewitems}
+<h2 class="home_h2">
+    <strong><i class="fa fa-search"></i>My Reviewing Proposals</strong>
+</h2>
+<section class="home_hui_goods">
+    <ul>
+        {foreach:items = $reviewitems}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/100/h/100}" alt="{$item['name']}">
+                <h3>{$item['name']}</h3>
+                <em>{$item['sell_price']}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{/if}
+
+
+{set:$contractitems=Api::run('getSellerProducts',array("status" => 7, "user" => $_GET['u']));}
+{if:$contractitems}
+<h2 class="home_h2">
+    <strong><i class="fa fa-certificate"></i>My Contracting Proposals</strong>
+</h2>
+<section class="home_hui_goods">
+    <ul>
+        {foreach:items = $contractitems}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/100/h/100}" alt="{$item['name']}">
+                <h3>{$item['name']}</h3>
+                <em>{$item['sell_price']}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{/if}
+
+
+{set:$activeitems=Api::run('getActiveProducts',array("user" => $_GET['u']));}
+{if:$activeitems}
+<h2 class="home_h2">
+    <strong><i class="fa fa-line-chart"></i>My Listed Assets</strong>
+</h2>
+<section class="home_tuan_goods">
+    <ul>
+        {foreach:items = $activeitems}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/200/h/200}" alt="{$item['name']}">
+                <h3>{$item['name']}</h3>
+                <em>{echo:number_format($item['current_price'],4)}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{/if}
+
+
+{if:$draftitems||$upvoteitems||$pollitems||$reviewitems||$contractitems||$activeitems}
+{else:}
+<div style="text-align:center;color:grey">
+<br><br><br>You have not made any proposals yet<br><br><br>
+</div>
+{/if}
+
+
+<script>
+$(function(){
+    // 
+    var navLi = $(".user_nav li");
+    navLi.each(function(){
+        var t = $(this);
+        var $icon = t.find('i');
+        var $a = t.find('a'),
+            href= $a.attr('href');
+        $icon.css('color', getRandomColor());
+
+//        if (href.indexOf("order")!=-1) {
+icls= $icon.attr('class');
+if (icls.indexOf("chain")!=-1) {
+
+            t.addClass('big');
+        };
+    });
+})
+
+function getRandomColor(){
+    var color = ["#F75A61","#F1407B","#32B2EC","#35BB98","#FFB359","#F88D91","#1FABEB"];
+    return color[~~(Math.random()*7)];
+}
+
+//jquery
+function set_fileupload(ico){
+  $('<input id="userIcoFile'+ico+'" style="display:none;" type="file" accept="image/*" name="userIcoFile" data-url="'+window.eurl("process.php?module=ucenter&action=user_ico_upload")+'">').appendTo('body');
+  $('.user_info_ico a')[0].href="javascript:$('#userIcoFile"+ico+"').trigger('click');";
+  $('#userIcoFile'+ico).fileupload({
+    dataType: 'json',
+    done: function (e, data)
+    {
+	data.result && data.result.flag == 1 ? $('#user_ico_img').attr('src',data.result.img) : alert(data.result.error);
+	$('#uploading').hide();
+	set_fileupload(++ico);
+    }
+
+  }).on('fileuploadstart', function (e) {
+    $('#uploading')[0].style.display='flex';
+  });
+}
+
+set_fileupload(1);
+
+</script>

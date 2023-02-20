@@ -1,0 +1,15 @@
+<div id="pageInfo" data-title="My Trades" data-goback="{url:/site/index}"></div>
+
+{set:$investment=Api::run('getInvestments',array("user" => $_GET['u']))}
+{foreach:items=$investment}
+{/foreach}
+
+{if:!$items}
+<section class="nodata">You have not invested any token yet !</section>
+{else:}
+
+<div id="divtrades" style="position:absolute;left:0%;top:0px;width:100%;height:100%;background-color:black;text-align:center">
+<iframe id="frametrades" src="" border="0" frameborder="0" style="width:100%;height:100%;border-style:none;overflow:hidden" frameBorder="0" scrolling="yes"></iframe>
+</div>
+
+{/if}

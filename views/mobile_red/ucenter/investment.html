@@ -1,0 +1,20 @@
+<div id="pageInfo" data-title="My Investment" data-goback="{url:/site/index}"></div>
+
+<section class="home_tuan_goods">
+    <ul>
+    {set:$investment=Api::run('getInvestments',array("user" => $_GET['u']))}
+        {foreach:items=$investment}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/200/h/200}">
+                <h3>{$item['name']}</h3>
+                <em>{echo:number_format($item['current_price'],4)}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+
+{if:!$items}
+<section class="nodata">You have not invested any token yet !</section>
+{/if}

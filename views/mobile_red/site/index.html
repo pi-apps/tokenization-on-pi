@@ -1,0 +1,284 @@
+<script src="{theme:javascript/jquery.slider.js}"></script>
+
+<!-- -->
+<!--div class="home_banner">
+    {if:$this->index_slide}
+    <ul>
+        {foreach:items=$this->index_slide}
+        <li>
+            <a href="{$item['url']}"><img src="{url:/pic/thumb/img/$item[img]}" alt="{$item['name']}"></a>
+        </li>
+        {/foreach}
+    </ul>
+    {/if}
+</div-->
+
+
+{set:$activeitems=Api::run('getActiveProducts',array("user" => "%"));}
+<h2 class="home_h2" style="margin-top:0.25rem">
+    <strong><i class="fa fa-line-chart"></i>Active Tokens</strong>
+</h2>
+{if:$activeitems}
+<section class="home_tuan_goods">
+    <ul>
+        {foreach:items=$activeitems}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/200/h/200}">
+                <h3>{$item['name']}</h3>
+                <em>{echo:number_format($item['current_price'],4)}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{else:}
+<div style="text-align:center;color:grey">
+<br><br><br>No active tokens at the moment<br><br><br>
+</div>
+{/if}
+
+
+<!--  -->
+<nav class="home_nav">
+    <ul>
+        <li class="map"><a href="{url:site/sitemap}"><i class="fa fa-th-list"></i><span>Categories</span></a></li>
+        <li class="cart"><a href="{url:/ucenter/index}"><i class="fa fa-user"></i><span>User Center</span></a></li>
+        <li class="groupon"><a href="{url:/seller/goods_edit}"><i class="fa fa-plus"></i><span>New Proposal</span></a></li>
+        <li class="favorite"><a href="{url:ucenter/favorite}"><i class="fa fa-star"></i><span>My Favorites</span></a></li>
+        <li class="order"><a href="{url:ucenter/investment}"><i class="fa fa-line-chart"></i><span>My Investment</span></a></li>
+    </ul>
+</nav>
+
+<!--div id="dakacd" style="color:purple;margin-top:0.25rem;text-align:center;display:none">
+&nbsp;<i class="fa fa-clock-o"></i>&nbsp;<img style="width:0.3rem;height:0.3rem" src="{if:$this->_siteConfig->logo}{webroot:$this->_siteConfig->logo}{else:}{skin:image/pilogo.png}{/if}">:&nbsp;
+                <time style="color:grey">
+                    <span id='cd_hour_daka' style="color:red"></span> 
+                    <span id='cd_minute_daka' style="color:red"></span> 
+                    <span id='cd_second_daka' style="color:red"></span> 
+                </time>
+</div-->
+
+{echo:Ad::show("100%*140(mobile_red)")}
+
+<!--  -->
+
+
+<!--
+{set:$qiangitems=Api::run('getPromotionList',6);}
+{if:$qiangitems}
+<h2 class="home_h2">
+    <strong><i class="fa fa-clock-o"></i></strong>
+</h2>
+
+<section class="home_xianshi_goods">
+    <ul>
+        {foreach:items=$qiangitems}
+        {set:$free_time = ITime::getDiffSec($item['end_time'])}
+        {set:$countNumsItem[] = $item['p_id'];}
+        <li>
+            <a href="{url:/site/products/id/$item['goods_id']}">
+                <img class="jImg" data-src="{url:/pic/thumb/img/$item[img]/w/200/h/200}">
+                <h3>{$item['name']}</h3>
+                <em>{$item['award_value']}</em>
+                <time>
+                    <span id='cd_hour_{$item['p_id']}'>{echo:floor($free_time/3600);}</span> 
+                    <span id='cd_minute_{$item['p_id']}'>{echo:floor(($free_time%3600)/60);}</span> 
+                    <span id='cd_second_{$item['p_id']}'>{echo:$free_time%60;}</span> 
+                </time>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{/if}
+-->
+
+<!--
+{set:$tuanitems=Api::run('getRegimentList',10)}
+{if:$tuanitems}
+<h2 class="home_h2">
+    <strong><i class="fa fa-bookmark"></i></strong>
+</h2>
+
+<section class="home_tuan_goods">
+    <ul>
+        {foreach:items=$tuanitems}
+        <li>
+            <a href="{url:/site/products/id/$item['goods_id']}">
+                <img class="jImg" data-src="{url:/pic/thumb/img/$item[img]/w/200/h/200}">
+                <h3>{$item['title']}</h3>
+                <em>{$item['regiment_price']}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{/if}
+-->
+
+
+{set:$upvoteitems=Api::run('getSellerProducts',array("status" => 4, "user" => "%"));}
+<h2 class="home_h2">
+    <strong><i class="fa fa-thumbs-up"></i>Upvote</strong>
+</h2>
+{if:$upvoteitems}
+<section class="home_hot_goods">
+    <ul>
+        {foreach:items = $upvoteitems}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/100/h/100}" alt="{$item['name']}">
+                <h3>{$item['name']}</h3>
+                <em>{$item['sell_price']}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{else:}
+<div style="text-align:center;color:grey">
+<br><br><br>No proposals at the moment<br><br><br>
+</div>
+{/if}
+
+
+{set:$pollitems=Api::run('getSellerProducts',array("status" => 5, "user" => "%"));}
+<h2 class="home_h2">
+    <strong><i class="fa fa-tags"></i>Polls</strong>
+</h2>
+{if:$pollitems}
+<section class="home_tejia_goods">
+    <ul>
+        {foreach:items = $pollitems}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/100/h/100}" alt="{$item['name']}">
+                <h3>{$item['name']}</h3>
+                <em>{$item['sell_price']}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{else:}
+<div style="text-align:center;color:grey">
+<br><br><br>No polls at the moment<br><br><br>
+</div>
+{/if}
+
+
+{set:$reviewitems=Api::run('getSellerProducts',array("status" => 6, "user" => "%"));}
+<h2 class="home_h2">
+    <strong><i class="fa fa-search"></i>Review</strong>
+</h2>
+{if:$reviewitems}
+<section class="home_hui_goods">
+    <ul>
+        {foreach:items = $reviewitems}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/100/h/100}" alt="{$item['name']}">
+                <h3>{$item['name']}</h3>
+                <em>{$item['sell_price']}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{else:}
+<div style="text-align:center;color:grey">
+<br><br><br>No reviews at the moment<br><br><br>
+</div>
+{/if}
+
+
+<!--h2 class="home_h2">
+	<strong><i class="fa fa-gift"></i></strong>
+</h2>
+
+<section class="home_hui_goods">
+	<ul>
+		{foreach:items=Api::run('getAssembleList',4)}
+		<li>
+			<a href="{url:/site/assemble/id/$item['id']}">
+				<img data-src="{url:/pic/thumb/img/$item[img]/w/100/h/100}" alt="{$item['title']}">
+				<h3>{$item['title']}</h3>
+				<em>{$item['assemble_price']}</em>
+			</a>
+		</li>
+		{/foreach}
+	</ul>
+</section-->
+
+
+{set:$contractitems=Api::run('getSellerProducts',array("status" => 7, "user" => "%"));}
+<h2 class="home_h2">
+    <strong><i class="fa fa-certificate"></i>Contracts</strong>
+</h2>
+{if:$contractitems}
+<section class="home_goods">
+    <ul>
+        {foreach:items = $contractitems}
+        <li>
+            <a href="{url:/site/products/id/$item['id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/300/h/300}" alt="{$item['name']}">
+                <span>{$item['name']}</span>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{else:}
+<div style="text-align:center;color:grey">
+<br><br><br>No contracts at the moment<br><br><br>
+</div>
+{/if}
+
+
+
+{echo:Ad::show("100%*140(mobile_red)")}
+
+{if:$pointData = Api::run('getCostPointList',4)}
+<h2 class="home_h2">
+    <a href="{url:/site/costpoint}"><strong><i class="fa fa-diamond"></i></strong></a>
+</h2>
+
+<section class="home_goods">
+    <ul>
+        {foreach:items=$pointData}
+        <li>
+            <a href="{url:/site/products/id/$item['goods_id']}">
+                <img data-src="{url:/pic/thumb/img/$item[img]/w/300/h/300}" alt="{$item['name']}">
+                <span>{$item['name']}</span>
+                <em>{$item['point']}</em>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</section>
+{/if}
+
+
+
+<script>
+$(function() {
+	// 
+	$(".home_banner").MobileSlider({
+		width: 720,
+		height: 360
+	});
+    //
+    var cd_timer = new countdown();
+    {if:isset($countNumsItem) && $countNumsItem}
+    {foreach:items = $countNumsItem}
+//        cd_timer.add({$item});
+    {/foreach}
+    {/if}
+
+//cd_timer.add("daka");
+
+})
+</script>
+
+
