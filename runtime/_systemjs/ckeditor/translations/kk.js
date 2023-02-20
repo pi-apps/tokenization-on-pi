@@ -1,0 +1,1 @@
+(function(n){const t=n["kk"]=n["kk"]||{};t.dictionary=Object.assign(t.dictionary||{},{"Align center":" ","Align left":" ","Align right":" ",Justify:"","Text alignment":" ","Text alignment toolbar":"   "});t.getPluralForm=function(n){return n!=1}})(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));
