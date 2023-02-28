@@ -8,7 +8,6 @@ Tokens are freely tradable in the Pi cryptocurrency on our TokensDeFi exchange. 
 
 Brainstorm:  pi://brainstorm.pi/project/63bd46814b80e56a4304da2c
 
-Youtube video:  https://youtu.be/FUUBgETOUBQ
 
 
 <br /><br />![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) 
