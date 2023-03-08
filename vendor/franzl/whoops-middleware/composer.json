@@ -1,0 +1,28 @@
+{
+  "name": "franzl/whoops-middleware",
+  "description": "PSR-15 compatible middleware for Whoops, the pretty error handler",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Franzl\\Middleware\\Whoops\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^7.2 || ^8.0",
+    "filp/whoops": "^1.1 || ^2.0",
+    "middlewares/utils": "^3.0"
+  },
+  "suggest": {
+    "psr/http-server-middleware": "In case you want to use PSR 15 middleware"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Franzl\\Middleware\\Whoops\\Test\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "laminas/laminas-diactoros": "^1.1.0 || ^2.0",
+    "phpunit/phpunit": "^8.0",
+    "psr/http-server-middleware": "^1.0"
+  }
+}
