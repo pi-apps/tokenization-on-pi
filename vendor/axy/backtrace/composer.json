@@ -1,0 +1,30 @@
+{
+    "name": "axy/backtrace",
+    "type": "library",
+    "description": "Tracing in PHP",
+    "keywords": [
+        "Backtrace",
+        "Trace",
+        "Exception",
+        "Debug"
+    ],
+    "homepage": "https://github.com/axypro/backtrace",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oleg Grigoriev",
+            "email": "go.vasac@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "axy\\backtrace\\": ""
+        }
+    },
+    "archive": {
+        "exclude": ["/tests/*", "/doc/*", "/cs.sh", "/phpmd.sh", "/*.xml.dist", "/CHANGELOG.md"]
+    }
+}

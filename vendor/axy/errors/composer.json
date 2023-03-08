@@ -1,0 +1,29 @@
+{
+    "name": "axy/errors",
+    "type": "library",
+    "description": "Exceptions in PHP",
+    "keywords": [
+        "Exception",
+        "Error"
+    ],
+    "homepage": "https://github.com/axypro/errors",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oleg Grigoriev",
+            "email": "go.vasac@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "axy/backtrace": "~1.0.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "axy\\errors\\": ""
+        }
+    },
+    "archive": {
+        "exclude": ["/tests/*", "/doc/*", "/cs.sh", "/phpmd.sh", "/*.xml.dist", "/CHANGELOG.md"]
+    }
+}

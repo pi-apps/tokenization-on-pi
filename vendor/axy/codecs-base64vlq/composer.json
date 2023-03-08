@@ -1,0 +1,32 @@
+{
+    "name": "axy/codecs-base64vlq",
+    "type": "library",
+    "description": "Codec for VLQ (variable-length quantity) Base64 algorithm",
+    "keywords": [
+        "Codec",
+        "VLQ",
+        "Variable length quantity",
+        "Base64",
+        "Source map"
+    ],
+    "homepage": "https://github.com/axypro/codecs-base64vlq",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oleg Grigoriev",
+            "email": "go.vasac@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "axy/errors": "~1.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "axy\\codecs\\base64vlq\\": ""
+        }
+    },
+    "archive": {
+        "exclude": ["/tests/*", "/doc/*", "/cs.sh", "/phpmd.sh", "/*.xml.dist", "/CHANGELOG.md"]
+    }
+}

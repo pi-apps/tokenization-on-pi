@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1449666497">
+  <project timestamp="1449666497">
+    <file name="/home/go/.composer/vendor/guzzlehttp/guzzle/src/functions.php">
+      <line num="20" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="44" type="stmt" count="0"/>
+      <line num="45" type="stmt" count="0"/>
+      <line num="46" type="stmt" count="0"/>
+      <line num="47" type="stmt" count="0"/>
+      <line num="48" type="stmt" count="0"/>
+      <line num="49" type="stmt" count="0"/>
+      <line num="50" type="stmt" count="0"/>
+      <line num="51" type="stmt" count="0"/>
+      <line num="53" type="stmt" count="0"/>
+      <line num="54" type="stmt" count="0"/>
+      <line num="66" type="stmt" count="0"/>
+      <line num="68" type="stmt" count="0"/>
+      <line num="69" type="stmt" count="0"/>
+      <line num="70" type="stmt" count="0"/>
+      <line num="71" type="stmt" count="0"/>
+      <line num="72" type="stmt" count="0"/>
+      <line num="73" type="stmt" count="0"/>
+      <line num="75" type="stmt" count="0"/>
+      <line num="87" type="stmt" count="0"/>
+      <line num="88" type="stmt" count="0"/>
+      <line num="89" type="stmt" count="0"/>
+      <line num="90" type="stmt" count="0"/>
+      <line num="93" type="stmt" count="0"/>
+      <line num="106" type="stmt" count="0"/>
+      <line num="107" type="stmt" count="0"/>
+      <line num="108" type="stmt" count="0"/>
+      <line num="109" type="stmt" count="0"/>
+      <line num="110" type="stmt" count="0"/>
+      <line num="111" type="stmt" count="0"/>
+      <line num="112" type="stmt" count="0"/>
+      <line num="113" type="stmt" count="0"/>
+      <line num="115" type="stmt" count="0"/>
+      <line num="117" type="stmt" count="0"/>
+      <line num="118" type="stmt" count="0"/>
+      <line num="119" type="stmt" count="0"/>
+      <line num="120" type="stmt" count="0"/>
+      <line num="121" type="stmt" count="0"/>
+      <line num="124" type="stmt" count="0"/>
+      <line num="134" type="stmt" count="0"/>
+      <line num="136" type="stmt" count="0"/>
+      <line num="137" type="stmt" count="0"/>
+      <line num="138" type="stmt" count="0"/>
+      <line num="139" type="stmt" count="0"/>
+      <line num="140" type="stmt" count="0"/>
+      <line num="141" type="stmt" count="0"/>
+      <line num="142" type="stmt" count="0"/>
+      <line num="144" type="stmt" count="0"/>
+      <line num="163" type="stmt" count="0"/>
+      <line num="178" type="stmt" count="0"/>
+      <line num="180" type="stmt" count="0"/>
+      <line num="181" type="stmt" count="0"/>
+      <line num="184" type="stmt" count="0"/>
+      <line num="185" type="stmt" count="0"/>
+      <line num="188" type="stmt" count="0"/>
+      <line num="189" type="stmt" count="0"/>
+      <line num="192" type="stmt" count="0"/>
+      <line num="193" type="stmt" count="0"/>
+      <line num="194" type="stmt" count="0"/>
+      <line num="196" type="stmt" count="0"/>
+      <line num="198" type="stmt" count="0"/>
+      <line num="212" type="stmt" count="0"/>
+      <line num="225" type="stmt" count="0"/>
+      <line num="226" type="stmt" count="0"/>
+      <line num="227" type="stmt" count="0"/>
+      <line num="228" type="stmt" count="0"/>
+      <line num="230" type="stmt" count="0"/>
+      <line num="254" type="stmt" count="0"/>
+      <line num="255" type="stmt" count="0"/>
+      <line num="259" type="stmt" count="0"/>
+      <line num="260" type="stmt" count="0"/>
+      <line num="261" type="stmt" count="0"/>
+      <line num="263" type="stmt" count="0"/>
+      <line num="265" type="stmt" count="0"/>
+      <line num="266" type="stmt" count="0"/>
+      <line num="267" type="stmt" count="0"/>
+      <line num="269" type="stmt" count="0"/>
+      <line num="270" type="stmt" count="0"/>
+      <line num="272" type="stmt" count="0"/>
+      <line num="276" type="stmt" count="0"/>
+      <line num="277" type="stmt" count="0"/>
+      <line num="278" type="stmt" count="0"/>
+      <line num="281" type="stmt" count="0"/>
+      <line num="283" type="stmt" count="0"/>
+      <metrics loc="284" ncloc="170" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="89" coveredstatements="0" elements="89" coveredelements="0"/>
+    </file>
+    <file name="/home/go/.composer/vendor/guzzlehttp/promises/src/functions.php">
+      <line num="21" type="stmt" count="0"/>
+      <line num="23" type="stmt" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="40" type="stmt" count="0"/>
+      <line num="41" type="stmt" count="0"/>
+      <line num="44" type="stmt" count="0"/>
+      <line num="45" type="stmt" count="0"/>
+      <line num="46" type="stmt" count="0"/>
+      <line num="48" type="stmt" count="0"/>
+      <line num="50" type="stmt" count="0"/>
+      <line num="62" type="stmt" count="0"/>
+      <line num="63" type="stmt" count="0"/>
+      <line num="67" type="stmt" count="0"/>
+      <line num="68" type="stmt" count="0"/>
+      <line num="69" type="stmt" count="0"/>
+      <line num="70" type="stmt" count="0"/>
+      <line num="71" type="stmt" count="0"/>
+      <line num="72" type="stmt" count="0"/>
+      <line num="75" type="stmt" count="0"/>
+      <line num="88" type="stmt" count="0"/>
+      <line num="89" type="stmt" count="0"/>
+      <line num="92" type="stmt" count="0"/>
+      <line num="105" type="stmt" count="0"/>
+      <line num="106" type="stmt" count="0"/>
+      <line num="118" type="stmt" count="0"/>
+      <line num="119" type="stmt" count="0"/>
+      <line num="120" type="stmt" count="0"/>
+      <line num="121" type="stmt" count="0"/>
+      <line num="123" type="stmt" count="0"/>
+      <line num="145" type="stmt" count="0"/>
+      <line num="146" type="stmt" count="0"/>
+      <line num="147" type="stmt" count="0"/>
+      <line num="148" type="stmt" count="0"/>
+      <line num="149" type="stmt" count="0"/>
+      <line num="150" type="stmt" count="0"/>
+      <line num="151" type="stmt" count="0"/>
+      <line num="168" type="stmt" count="0"/>
+      <line num="169" type="stmt" count="0"/>
+      <line num="170" type="stmt" count="0"/>
+      <line num="171" type="stmt" count="0"/>
+      <line num="173" type="stmt" count="0"/>
+      <line num="190" type="stmt" count="0"/>
+      <line num="191" type="stmt" count="0"/>
+      <line num="192" type="stmt" count="0"/>
+      <line num="193" type="stmt" count="0"/>
+      <line num="195" type="stmt" count="0"/>
+      <line num="212" type="stmt" count="0"/>
+      <line num="213" type="stmt" count="0"/>
+      <line num="214" type="stmt" count="0"/>
+      <line num="216" type="stmt" count="0"/>
+      <line num="217" type="stmt" count="0"/>
+      <line num="219" type="stmt" count="0"/>
+      <line num="220" type="stmt" count="0"/>
+      <line num="222" type="stmt" count="0"/>
+      <line num="223" type="stmt" count="0"/>
+      <line num="224" type="stmt" count="0"/>
+      <line num="245" type="stmt" count="0"/>
+      <line num="246" type="stmt" count="0"/>
+      <line num="248" type="stmt" count="0"/>
+      <line num="249" type="stmt" count="0"/>
+      <line num="251" type="stmt" count="0"/>
+      <line num="252" type="stmt" count="0"/>
+      <line num="254" type="stmt" count="0"/>
+      <line num="255" type="stmt" count="0"/>
+      <line num="256" type="stmt" count="0"/>
+      <line num="257" type="stmt" count="0"/>
+      <line num="258" type="stmt" count="0"/>
+      <line num="260" type="stmt" count="0"/>
+      <line num="261" type="stmt" count="0"/>
+      <line num="262" type="stmt" count="0"/>
+      <line num="264" type="stmt" count="0"/>
+      <line num="265" type="stmt" count="0"/>
+      <line num="266" type="stmt" count="0"/>
+      <line num="268" type="stmt" count="0"/>
+      <line num="270" type="stmt" count="0"/>
+      <line num="271" type="stmt" count="0"/>
+      <line num="273" type="stmt" count="0"/>
+      <line num="302" type="stmt" count="0"/>
+      <line num="304" type="stmt" count="0"/>
+      <line num="305" type="stmt" count="0"/>
+      <line num="307" type="stmt" count="0"/>
+      <line num="308" type="stmt" count="0"/>
+      <line num="310" type="stmt" count="0"/>
+      <line num="311" type="stmt" count="0"/>
+      <line num="313" type="stmt" count="0"/>
+      <line num="314" type="stmt" count="0"/>
+      <line num="315" type="stmt" count="0"/>
+      <line num="342" type="stmt" count="0"/>
+      <line num="343" type="stmt" count="0"/>
+      <line num="345" type="stmt" count="0"/>
+      <line num="369" type="stmt" count="0"/>
+      <line num="370" type="stmt" count="0"/>
+      <line num="371" type="stmt" count="0"/>
+      <line num="373" type="stmt" count="0"/>
+      <line num="392" type="stmt" count="0"/>
+      <line num="393" type="stmt" count="0"/>
+      <line num="394" type="stmt" count="0"/>
+      <line num="395" type="stmt" count="0"/>
+      <line num="397" type="stmt" count="0"/>
+      <line num="398" type="stmt" count="0"/>
+      <line num="399" type="stmt" count="0"/>
+      <line num="411" type="stmt" count="0"/>
+      <line num="423" type="stmt" count="0"/>
+      <line num="435" type="stmt" count="0"/>
+      <line num="475" type="stmt" count="0"/>
+      <line num="476" type="stmt" count="0"/>
+      <line num="482" type="stmt" count="0"/>
+      <line num="484" type="stmt" count="0"/>
+      <line num="485" type="stmt" count="0"/>
+      <line num="486" type="stmt" count="0"/>
+      <line num="487" type="stmt" count="0"/>
+      <line num="488" type="stmt" count="0"/>
+      <line num="490" type="stmt" count="0"/>
+      <line num="492" type="stmt" count="0"/>
+      <line num="494" type="stmt" count="0"/>
+      <metrics loc="495" ncloc="253" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="117" coveredstatements="0" elements="117" coveredelements="0"/>
+    </file>
+    <file name="/home/go/.composer/vendor/guzzlehttp/psr7/src/functions.php">
+      <line num="19" type="stmt" count="0"/>
+      <line num="20" type="stmt" count="0"/>
+      <line num="21" type="stmt" count="0"/>
+      <line num="22" type="stmt" count="0"/>
+      <line num="23" type="stmt" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="34" type="stmt" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="36" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <line num="55" type="stmt" count="0"/>
+      <line num="56" type="stmt" count="0"/>
+      <line num="57" type="stmt" count="0"/>
+      <line num="58" type="stmt" count="0"/>
+      <line num="61" type="stmt" count="0"/>
+      <line num="79" type="stmt" count="0"/>
+      <line num="80" type="stmt" count="0"/>
+      <line num="81" type="stmt" count="0"/>
+      <line num="82" type="stmt" count="0"/>
+      <line num="83" type="stmt" count="0"/>
+      <line num="84" type="stmt" count="0"/>
+      <line num="85" type="stmt" count="0"/>
+      <line num="86" type="stmt" count="0"/>
+      <line num="87" type="stmt" count="0"/>
+      <line num="88" type="stmt" count="0"/>
+      <line num="89" type="stmt" count="0"/>
+      <line num="90" type="stmt" count="0"/>
+      <line num="91" type="stmt" count="0"/>
+      <line num="92" type="stmt" count="0"/>
+      <line num="94" type="stmt" count="0"/>
+      <line num="95" type="stmt" count="0"/>
+      <line num="97" type="stmt" count="0"/>
+      <line num="98" type="stmt" count="0"/>
+      <line num="99" type="stmt" count="0"/>
+      <line num="100" type="stmt" count="0"/>
+      <line num="101" type="stmt" count="0"/>
+      <line num="102" type="stmt" count="0"/>
+      <line num="104" type="stmt" count="0"/>
+      <line num="105" type="stmt" count="0"/>
+      <line num="106" type="stmt" count="0"/>
+      <line num="107" type="stmt" count="0"/>
+      <line num="109" type="stmt" count="0"/>
+      <line num="110" type="stmt" count="0"/>
+      <line num="113" type="stmt" count="0"/>
+      <line num="128" type="stmt" count="0"/>
+      <line num="129" type="stmt" count="0"/>
+      <line num="131" type="stmt" count="0"/>
+      <line num="132" type="stmt" count="0"/>
+      <line num="133" type="stmt" count="0"/>
+      <line num="134" type="stmt" count="0"/>
+      <line num="135" type="stmt" count="0"/>
+      <line num="136" type="stmt" count="0"/>
+      <line num="137" type="stmt" count="0"/>
+      <line num="138" type="stmt" count="0"/>
+      <line num="139" type="stmt" count="0"/>
+      <line num="141" type="stmt" count="0"/>
+      <line num="142" type="stmt" count="0"/>
+      <line num="143" type="stmt" count="0"/>
+      <line num="144" type="stmt" count="0"/>
+      <line num="145" type="stmt" count="0"/>
+      <line num="146" type="stmt" count="0"/>
+      <line num="148" type="stmt" count="0"/>
+      <line num="161" type="stmt" count="0"/>
+      <line num="162" type="stmt" count="0"/>
+      <line num="165" type="stmt" count="0"/>
+      <line num="166" type="stmt" count="0"/>
+      <line num="167" type="stmt" count="0"/>
+      <line num="168" type="stmt" count="0"/>
+      <line num="169" type="stmt" count="0"/>
+      <line num="170" type="stmt" count="0"/>
+      <line num="172" type="stmt" count="0"/>
+      <line num="173" type="stmt" count="0"/>
+      <line num="174" type="stmt" count="0"/>
+      <line num="175" type="stmt" count="0"/>
+      <line num="176" type="stmt" count="0"/>
+      <line num="178" type="stmt" count="0"/>
+      <line num="200" type="stmt" count="0"/>
+      <line num="201" type="stmt" count="0"/>
+      <line num="204" type="stmt" count="0"/>
+      <line num="206" type="stmt" count="0"/>
+      <line num="207" type="stmt" count="0"/>
+      <line num="208" type="stmt" count="0"/>
+      <line num="210" type="stmt" count="0"/>
+      <line num="211" type="stmt" count="0"/>
+      <line num="212" type="stmt" count="0"/>
+      <line num="213" type="stmt" count="0"/>
+      <line num="216" type="stmt" count="0"/>
+      <line num="217" type="stmt" count="0"/>
+      <line num="218" type="stmt" count="0"/>
+      <line num="220" type="stmt" count="0"/>
+      <line num="221" type="stmt" count="0"/>
+      <line num="222" type="stmt" count="0"/>
+      <line num="223" type="stmt" count="0"/>
+      <line num="225" type="stmt" count="0"/>
+      <line num="226" type="stmt" count="0"/>
+      <line num="227" type="stmt" count="0"/>
+      <line num="229" type="stmt" count="0"/>
+      <line num="230" type="stmt" count="0"/>
+      <line num="231" type="stmt" count="0"/>
+      <line num="232" type="stmt" count="0"/>
+      <line num="233" type="stmt" count="0"/>
+      <line num="234" type="stmt" count="0"/>
+      <line num="235" type="stmt" count="0"/>
+      <line num="236" type="stmt" count="0"/>
+      <line num="237" type="stmt" count="0"/>
+      <line num="252" type="stmt" count="0"/>
+      <line num="254" type="stmt" count="0"/>
+      <line num="255" type="stmt" count="0"/>
+      <line num="256" type="stmt" count="0"/>
+      <line num="257" type="stmt" count="0"/>
+      <line num="273" type="stmt" count="0"/>
+      <line num="275" type="stmt" count="0"/>
+      <line num="276" type="stmt" count="0"/>
+      <line num="277" type="stmt" count="0"/>
+      <line num="278" type="stmt" count="0"/>
+      <line num="279" type="stmt" count="0"/>
+      <line num="280" type="stmt" count="0"/>
+      <line num="281" type="stmt" count="0"/>
+      <line num="283" type="stmt" count="0"/>
+      <line num="284" type="stmt" count="0"/>
+      <line num="286" type="stmt" count="0"/>
+      <line num="288" type="stmt" count="0"/>
+      <line num="291" type="stmt" count="0"/>
+      <line num="306" type="stmt" count="0"/>
+      <line num="308" type="stmt" count="0"/>
+      <line num="309" type="stmt" count="0"/>
+      <line num="310" type="stmt" count="0"/>
+      <line num="312" type="stmt" count="0"/>
+      <line num="313" type="stmt" count="0"/>
+      <line num="315" type="stmt" count="0"/>
+      <line num="316" type="stmt" count="0"/>
+      <line num="317" type="stmt" count="0"/>
+      <line num="320" type="stmt" count="0"/>
+      <line num="321" type="stmt" count="0"/>
+      <line num="322" type="stmt" count="0"/>
+      <line num="324" type="stmt" count="0"/>
+      <line num="325" type="stmt" count="0"/>
+      <line num="327" type="stmt" count="0"/>
+      <line num="328" type="stmt" count="0"/>
+      <line num="329" type="stmt" count="0"/>
+      <line num="331" type="stmt" count="0"/>
+      <line num="350" type="stmt" count="0"/>
+      <line num="351" type="stmt" count="0"/>
+      <line num="352" type="stmt" count="0"/>
+      <line num="353" type="stmt" count="0"/>
+      <line num="355" type="stmt" count="0"/>
+      <line num="356" type="stmt" count="0"/>
+      <line num="359" type="stmt" count="0"/>
+      <line num="360" type="stmt" count="0"/>
+      <line num="361" type="stmt" count="0"/>
+      <line num="362" type="stmt" count="0"/>
+      <line num="363" type="stmt" count="0"/>
+      <line num="365" type="stmt" count="0"/>
+      <line num="366" type="stmt" count="0"/>
+      <line num="367" type="stmt" count="0"/>
+      <line num="368" type="stmt" count="0"/>
+      <line num="370" type="stmt" count="0"/>
+      <line num="371" type="stmt" count="0"/>
+      <line num="388" type="stmt" count="0"/>
+      <line num="390" type="stmt" count="0"/>
+      <line num="391" type="stmt" count="0"/>
+      <line num="392" type="stmt" count="0"/>
+      <line num="394" type="stmt" count="0"/>
+      <line num="395" type="stmt" count="0"/>
+      <line num="396" type="stmt" count="0"/>
+      <line num="397" type="stmt" count="0"/>
+      <line num="399" type="stmt" count="0"/>
+      <line num="400" type="stmt" count="0"/>
+      <line num="402" type="stmt" count="0"/>
+      <line num="415" type="stmt" count="0"/>
+      <line num="416" type="stmt" count="0"/>
+      <line num="418" type="stmt" count="0"/>
+      <line num="420" type="stmt" count="0"/>
+      <line num="421" type="stmt" count="0"/>
+      <line num="423" type="stmt" count="0"/>
+      <line num="425" type="stmt" count="0"/>
+      <line num="426" type="stmt" count="0"/>
+      <line num="428" type="stmt" count="0"/>
+      <line num="430" type="stmt" count="0"/>
+      <line num="442" type="stmt" count="0"/>
+      <line num="443" type="stmt" count="0"/>
+      <line num="444" type="stmt" count="0"/>
+      <line num="445" type="stmt" count="0"/>
+      <line num="447" type="stmt" count="0"/>
+      <line num="448" type="stmt" count="0"/>
+      <line num="450" type="stmt" count="0"/>
+      <line num="451" type="stmt" count="0"/>
+      <line num="452" type="stmt" count="0"/>
+      <line num="453" type="stmt" count="0"/>
+      <line num="454" type="stmt" count="0"/>
+      <line num="456" type="stmt" count="0"/>
+      <line num="458" type="stmt" count="0"/>
+      <line num="470" type="stmt" count="0"/>
+      <line num="471" type="stmt" count="0"/>
+      <line num="472" type="stmt" count="0"/>
+      <line num="474" type="stmt" count="0"/>
+      <line num="476" type="stmt" count="0"/>
+      <line num="477" type="stmt" count="0"/>
+      <line num="478" type="stmt" count="0"/>
+      <line num="479" type="stmt" count="0"/>
+      <line num="480" type="stmt" count="0"/>
+      <line num="481" type="stmt" count="0"/>
+      <line num="482" type="stmt" count="0"/>
+      <line num="500" type="stmt" count="0"/>
+      <line num="502" type="stmt" count="0"/>
+      <line num="503" type="stmt" count="0"/>
+      <line num="506" type="stmt" count="0"/>
+      <line num="508" type="stmt" count="0"/>
+      <line num="509" type="stmt" count="0"/>
+      <line num="510" type="stmt" count="0"/>
+      <line num="511" type="stmt" count="0"/>
+      <line num="512" type="stmt" count="0"/>
+      <line num="513" type="stmt" count="0"/>
+      <line num="514" type="stmt" count="0"/>
+      <line num="518" type="stmt" count="0"/>
+      <line num="519" type="stmt" count="0"/>
+      <line num="520" type="stmt" count="0"/>
+      <line num="521" type="stmt" count="0"/>
+      <line num="522" type="stmt" count="0"/>
+      <line num="523" type="stmt" count="0"/>
+      <line num="524" type="stmt" count="0"/>
+      <line num="525" type="stmt" count="0"/>
+      <line num="526" type="stmt" count="0"/>
+      <line num="527" type="stmt" count="0"/>
+      <line num="528" type="stmt" count="0"/>
+      <line num="530" type="stmt" count="0"/>
+      <line num="532" type="stmt" count="0"/>
+      <line num="550" type="stmt" count="0"/>
+      <line num="551" type="stmt" count="0"/>
+      <line num="554" type="stmt" count="0"/>
+      <line num="556" type="stmt" count="0"/>
+      <line num="557" type="stmt" count="0"/>
+      <line num="558" type="stmt" count="0"/>
+      <line num="559" type="stmt" count="0"/>
+      <line num="560" type="stmt" count="0"/>
+      <line num="561" type="stmt" count="0"/>
+      <line num="564" type="stmt" count="0"/>
+      <line num="565" type="stmt" count="0"/>
+      <line num="566" type="stmt" count="0"/>
+      <line num="567" type="stmt" count="0"/>
+      <line num="568" type="stmt" count="0"/>
+      <line num="569" type="stmt" count="0"/>
+      <line num="570" type="stmt" count="0"/>
+      <line num="571" type="stmt" count="0"/>
+      <line num="572" type="stmt" count="0"/>
+      <line num="573" type="stmt" count="0"/>
+      <line num="574" type="stmt" count="0"/>
+      <line num="575" type="stmt" count="0"/>
+      <line num="576" type="stmt" count="0"/>
+      <line num="577" type="stmt" count="0"/>
+      <line num="578" type="stmt" count="0"/>
+      <line num="579" type="stmt" count="0"/>
+      <line num="580" type="stmt" count="0"/>
+      <line num="582" type="stmt" count="0"/>
+      <line num="584" type="stmt" count="0"/>
+      <line num="596" type="stmt" count="0"/>
+      <line num="708" type="stmt" count="0"/>
+      <line num="710" type="stmt" count="0"/>
+      <line num="712" type="stmt" count="0"/>
+      <line num="713" type="stmt" count="0"/>
+      <line num="714" type="stmt" count="0"/>
+      <line num="731" type="stmt" count="0"/>
+      <line num="732" type="stmt" count="0"/>
+      <line num="736" type="stmt" count="0"/>
+      <line num="737" type="stmt" count="0"/>
+      <line num="738" type="stmt" count="0"/>
+      <line num="740" type="stmt" count="0"/>
+      <line num="741" type="stmt" count="0"/>
+      <line num="743" type="stmt" count="0"/>
+      <line num="744" type="stmt" count="0"/>
+      <line num="745" type="stmt" count="0"/>
+      <line num="746" type="stmt" count="0"/>
+      <line num="747" type="stmt" count="0"/>
+      <line num="749" type="stmt" count="0"/>
+      <line num="750" type="stmt" count="0"/>
+      <line num="751" type="stmt" count="0"/>
+      <line num="752" type="stmt" count="0"/>
+      <line num="753" type="stmt" count="0"/>
+      <line num="754" type="stmt" count="0"/>
+      <line num="755" type="stmt" count="0"/>
+      <line num="757" type="stmt" count="0"/>
+      <line num="772" type="stmt" count="0"/>
+      <line num="773" type="stmt" count="0"/>
+      <line num="776" type="stmt" count="0"/>
+      <line num="777" type="stmt" count="0"/>
+      <line num="780" type="stmt" count="0"/>
+      <line num="781" type="stmt" count="0"/>
+      <line num="783" type="stmt" count="0"/>
+      <line num="789" type="stmt" count="0"/>
+      <line num="791" type="stmt" count="0"/>
+      <line num="792" type="stmt" count="0"/>
+      <line num="793" type="stmt" count="0"/>
+      <line num="795" type="stmt" count="0"/>
+      <line num="796" type="stmt" count="0"/>
+      <line num="797" type="stmt" count="0"/>
+      <line num="798" type="stmt" count="0"/>
+      <line num="799" type="stmt" count="0"/>
+      <line num="801" type="stmt" count="0"/>
+      <metrics loc="802" ncloc="580" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="305" coveredstatements="0" elements="305" coveredelements="0"/>
+    </file>
+    <file name="/home/go/.composer/vendor/symfony/polyfill-mbstring/bootstrap.php">
+      <metrics loc="51" ncloc="43" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <package name="axy\backtrace">
+      <file name="/home/go/github/axypro/backtrace/ExceptionTrace.php">
+        <class name="ExceptionTrace" namespace="axy\backtrace">
+          <metrics methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="46" coveredstatements="46" elements="51" coveredelements="51"/>
+        </class>
+        <line num="34" type="method" name="__construct" crap="6" count="13"/>
+        <line num="36" type="stmt" count="13"/>
+        <line num="37" type="stmt" count="1"/>
+        <line num="38" type="stmt" count="1"/>
+        <line num="39" type="stmt" count="13"/>
+        <line num="40" type="stmt" count="13"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="43" type="stmt" count="13"/>
+        <line num="44" type="stmt" count="1"/>
+        <line num="45" type="stmt" count="1"/>
+        <line num="47" type="stmt" count="13"/>
+        <line num="48" type="stmt" count="13"/>
+        <line num="49" type="stmt" count="13"/>
+        <line num="50" type="stmt" count="13"/>
+        <line num="51" type="stmt" count="13"/>
+        <line num="52" type="stmt" count="13"/>
+        <line num="53" type="stmt" count="13"/>
+        <line num="58" type="method" name="trimFilename" crap="2" count="1"/>
+        <line num="60" type="stmt" count="1"/>
+        <line num="61" type="stmt" count="1"/>
+        <line num="62" type="stmt" count="1"/>
+        <line num="63" type="stmt" count="1"/>
+        <line num="64" type="stmt" count="1"/>
+        <line num="65" type="stmt" count="1"/>
+        <line num="71" type="method" name="truncate" crap="5" count="8"/>
+        <line num="73" type="stmt" count="8"/>
+        <line num="74" type="stmt" count="8"/>
+        <line num="75" type="stmt" count="5"/>
+        <line num="76" type="stmt" count="5"/>
+        <line num="77" type="stmt" count="8"/>
+        <line num="78" type="stmt" count="5"/>
+        <line num="79" type="stmt" count="5"/>
+        <line num="80" type="stmt" count="5"/>
+        <line num="81" type="stmt" count="5"/>
+        <line num="82" type="stmt" count="8"/>
+        <line num="91" type="method" name="loadCurrentPoint" crap="5" count="1"/>
+        <line num="93" type="stmt" count="1"/>
+        <line num="94" type="stmt" count="1"/>
+        <line num="95" type="stmt" count="1"/>
+        <line num="96" type="stmt" count="1"/>
+        <line num="97" type="stmt" count="1"/>
+        <line num="98" type="stmt" count="1"/>
+        <line num="99" type="stmt" count="1"/>
+        <line num="100" type="stmt" count="1"/>
+        <line num="107" type="method" name="defineFLForNoResult" crap="5" count="5"/>
+        <line num="109" type="stmt" count="5"/>
+        <line num="110" type="stmt" count="1"/>
+        <line num="112" type="stmt" count="4"/>
+        <line num="113" type="stmt" count="1"/>
+        <line num="115" type="stmt" count="4"/>
+        <metrics loc="117" ncloc="74" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="46" coveredstatements="46" elements="51" coveredelements="51"/>
+      </file>
+      <file name="/home/go/github/axypro/backtrace/Trace.php">
+        <class name="Trace" namespace="axy\backtrace">
+          <metrics methods="24" coveredmethods="24" conditionals="0" coveredconditionals="0" statements="91" coveredstatements="91" elements="115" coveredelements="115"/>
+        </class>
+        <line num="50" type="method" name="__construct" crap="2" count="35"/>
+        <line num="52" type="stmt" count="35"/>
+        <line num="53" type="stmt" count="3"/>
+        <line num="54" type="stmt" count="3"/>
+        <line num="55" type="stmt" count="3"/>
+        <line num="56" type="stmt" count="35"/>
+        <line num="57" type="stmt" count="35"/>
+        <line num="58" type="stmt" count="35"/>
+        <line num="60" type="stmt" count="35"/>
+        <line num="65" type="method" name="normalize" crap="2" count="1"/>
+        <line num="67" type="stmt" count="1"/>
+        <line num="68" type="stmt" count="1"/>
+        <line num="69" type="stmt" count="1"/>
+        <line num="70" type="stmt" count="1"/>
+        <line num="71" type="stmt" count="1"/>
+        <line num="79" type="method" name="truncateByLimit" crap="2" count="2"/>
+        <line num="81" type="stmt" count="2"/>
+        <line num="82" type="stmt" count="1"/>
+        <line num="84" type="stmt" count="2"/>
+        <line num="85" type="stmt" count="2"/>
+        <line num="94" type="method" name="trimFilename" crap="4" count="2"/>
+        <line num="96" type="stmt" count="2"/>
+        <line num="97" type="stmt" count="2"/>
+        <line num="98" type="stmt" count="2"/>
+        <line num="99" type="stmt" count="2"/>
+        <line num="100" type="stmt" count="2"/>
+        <line num="101" type="stmt" count="2"/>
+        <line num="102" type="stmt" count="2"/>
+        <line num="103" type="stmt" count="2"/>
+        <line num="104" type="stmt" count="2"/>
+        <line num="105" type="stmt" count="2"/>
+        <line num="117" type="method" name="truncate" crap="4" count="16"/>
+        <line num="119" type="stmt" count="16"/>
+        <line num="120" type="stmt" count="16"/>
+        <line num="121" type="stmt" count="16"/>
+        <line num="122" type="stmt" count="16"/>
+        <line num="123" type="stmt" count="16"/>
+        <line num="124" type="stmt" count="10"/>
+        <line num="125" type="stmt" count="6"/>
+        <line num="126" type="stmt" count="6"/>
+        <line num="127" type="stmt" count="10"/>
+        <line num="128" type="stmt" count="10"/>
+        <line num="130" type="stmt" count="16"/>
+        <line num="131" type="stmt" count="16"/>
+        <line num="132" type="stmt" count="8"/>
+        <line num="142" type="method" name="truncateByFilter" crap="1" count="4"/>
+        <line num="144" type="stmt" count="4"/>
+        <line num="154" type="method" name="truncateByNamespace" crap="1" count="4"/>
+        <line num="156" type="stmt" count="4"/>
+        <line num="166" type="method" name="truncateByClass" crap="1" count="1"/>
+        <line num="168" type="stmt" count="1"/>
+        <line num="178" type="method" name="truncateByFile" crap="1" count="4"/>
+        <line num="180" type="stmt" count="4"/>
+        <line num="190" type="method" name="truncateByDir" crap="1" count="3"/>
+        <line num="192" type="stmt" count="3"/>
+        <line num="203" type="method" name="__get" crap="2" count="25"/>
+        <line num="205" type="stmt" count="25"/>
+        <line num="206" type="stmt" count="1"/>
+        <line num="208" type="stmt" count="25"/>
+        <line num="217" type="method" name="__isset" crap="1" count="2"/>
+        <line num="219" type="stmt" count="2"/>
+        <line num="229" type="method" name="__set" crap="1" count="1"/>
+        <line num="231" type="stmt" count="1"/>
+        <line num="240" type="method" name="__unset" crap="1" count="1"/>
+        <line num="242" type="stmt" count="1"/>
+        <line num="248" type="method" name="count" crap="1" count="1"/>
+        <line num="250" type="stmt" count="1"/>
+        <line num="256" type="method" name="getIterator" crap="1" count="1"/>
+        <line num="258" type="stmt" count="1"/>
+        <line num="264" type="method" name="offsetExists" crap="1" count="1"/>
+        <line num="266" type="stmt" count="1"/>
+        <line num="272" type="method" name="offsetGet" crap="2" count="1"/>
+        <line num="274" type="stmt" count="1"/>
+        <line num="275" type="stmt" count="1"/>
+        <line num="277" type="stmt" count="1"/>
+        <line num="285" type="method" name="offsetSet" crap="1" count="1"/>
+        <line num="287" type="stmt" count="1"/>
+        <line num="295" type="method" name="offsetUnset" crap="1" count="1"/>
+        <line num="297" type="stmt" count="1"/>
+        <line num="303" type="method" name="__toString" crap="1" count="1"/>
+        <line num="305" type="stmt" count="1"/>
+        <line num="317" type="method" name="filterItem" crap="6" count="16"/>
+        <line num="319" type="stmt" count="16"/>
+        <line num="320" type="stmt" count="4"/>
+        <line num="321" type="stmt" count="4"/>
+        <line num="322" type="stmt" count="3"/>
+        <line num="324" type="stmt" count="4"/>
+        <line num="325" type="stmt" count="16"/>
+        <line num="326" type="stmt" count="14"/>
+        <line num="327" type="stmt" count="14"/>
+        <line num="328" type="stmt" count="4"/>
+        <line num="330" type="stmt" count="12"/>
+        <line num="331" type="stmt" count="16"/>
+        <line num="332" type="stmt" count="16"/>
+        <line num="334" type="stmt" count="2"/>
+        <line num="342" type="method" name="filterByClass" crap="5" count="14"/>
+        <line num="344" type="stmt" count="14"/>
+        <line num="345" type="stmt" count="4"/>
+        <line num="346" type="stmt" count="3"/>
+        <line num="348" type="stmt" count="2"/>
+        <line num="349" type="stmt" count="12"/>
+        <line num="350" type="stmt" count="1"/>
+        <line num="351" type="stmt" count="1"/>
+        <line num="353" type="stmt" count="1"/>
+        <line num="354" type="stmt" count="12"/>
+        <line num="362" type="method" name="filterByFile" crap="5" count="16"/>
+        <line num="364" type="stmt" count="16"/>
+        <line num="365" type="stmt" count="3"/>
+        <line num="366" type="stmt" count="1"/>
+        <line num="368" type="stmt" count="3"/>
+        <line num="369" type="stmt" count="16"/>
+        <line num="370" type="stmt" count="4"/>
+        <line num="371" type="stmt" count="2"/>
+        <line num="373" type="stmt" count="4"/>
+        <line num="374" type="stmt" count="16"/>
+        <metrics loc="418" ncloc="233" classes="1" methods="24" coveredmethods="24" conditionals="0" coveredconditionals="0" statements="91" coveredstatements="91" elements="115" coveredelements="115"/>
+      </file>
+    </package>
+    <package name="axy\backtrace\helpers">
+      <file name="/home/go/github/axypro/backtrace/helpers/Represent.php">
+        <class name="Represent" namespace="axy\backtrace\helpers">
+          <metrics methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="59" coveredstatements="57" elements="65" coveredelements="62"/>
+        </class>
+        <line num="29" type="method" name="arg" crap="7" count="17"/>
+        <line num="31" type="stmt" count="17"/>
+        <line num="32" type="stmt" count="17"/>
+        <line num="33" type="stmt" count="1"/>
+        <line num="34" type="stmt" count="16"/>
+        <line num="35" type="stmt" count="2"/>
+        <line num="36" type="stmt" count="14"/>
+        <line num="37" type="stmt" count="2"/>
+        <line num="38" type="stmt" count="13"/>
+        <line num="39" type="stmt" count="3"/>
+        <line num="40" type="stmt" count="11"/>
+        <line num="41" type="stmt" count="7"/>
+        <line num="42" type="stmt" count="5"/>
+        <line num="43" type="stmt" count="5"/>
+        <line num="44" type="stmt" count="5"/>
+        <line num="53" type="method" name="method" crap="6" count="7"/>
+        <line num="55" type="stmt" count="7"/>
+        <line num="56" type="stmt" count="1"/>
+        <line num="58" type="stmt" count="6"/>
+        <line num="59" type="stmt" count="6"/>
+        <line num="60" type="stmt" count="4"/>
+        <line num="61" type="stmt" count="4"/>
+        <line num="62" type="stmt" count="4"/>
+        <line num="63" type="stmt" count="3"/>
+        <line num="65" type="stmt" count="6"/>
+        <line num="66" type="stmt" count="6"/>
+        <line num="67" type="stmt" count="5"/>
+        <line num="68" type="stmt" count="6"/>
+        <line num="69" type="stmt" count="6"/>
+        <line num="70" type="stmt" count="6"/>
+        <line num="79" type="method" name="point" crap="3" count="6"/>
+        <line num="81" type="stmt" count="6"/>
+        <line num="82" type="stmt" count="3"/>
+        <line num="83" type="stmt" count="3"/>
+        <line num="84" type="stmt" count="5"/>
+        <line num="85" type="stmt" count="5"/>
+        <line num="86" type="stmt" count="4"/>
+        <line num="87" type="stmt" count="4"/>
+        <line num="89" type="stmt" count="6"/>
+        <line num="101" type="method" name="item" crap="2" count="3"/>
+        <line num="103" type="stmt" count="3"/>
+        <line num="104" type="stmt" count="3"/>
+        <line num="105" type="stmt" count="3"/>
+        <line num="106" type="stmt" count="3"/>
+        <line num="118" type="method" name="trace" crap="2" count="2"/>
+        <line num="120" type="stmt" count="2"/>
+        <line num="121" type="stmt" count="2"/>
+        <line num="122" type="stmt" count="2"/>
+        <line num="123" type="stmt" count="2"/>
+        <line num="124" type="stmt" count="2"/>
+        <line num="125" type="stmt" count="2"/>
+        <line num="134" type="method" name="cutString" crap="5.09" count="7"/>
+        <line num="136" type="stmt" count="7"/>
+        <line num="137" type="stmt" count="7"/>
+        <line num="138" type="stmt" count="1"/>
+        <line num="139" type="stmt" count="1"/>
+        <line num="140" type="stmt" count="7"/>
+        <line num="141" type="stmt" count="7"/>
+        <line num="142" type="stmt" count="7"/>
+        <line num="143" type="stmt" count="0"/>
+        <line num="145" type="stmt" count="7"/>
+        <line num="146" type="stmt" count="4"/>
+        <line num="147" type="stmt" count="4"/>
+        <line num="149" type="stmt" count="0"/>
+        <line num="152" type="stmt" count="3"/>
+        <metrics loc="154" ncloc="98" classes="1" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="59" coveredstatements="57" elements="65" coveredelements="62"/>
+      </file>
+    </package>
+    <package name="axy\backtrace\tests\hlp">
+      <file name="/home/go/github/axypro/backtrace/tests/hlp/GetExceptionTrace.php">
+        <class name="GetExceptionTrace" namespace="axy\backtrace\tests\hlp">
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
+        </class>
+        <line num="30" type="method" name="__construct" crap="1" count="1"/>
+        <line num="32" type="stmt" count="1"/>
+        <line num="33" type="stmt" count="1"/>
+        <line num="34" type="stmt" count="1"/>
+        <line num="35" type="stmt" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <metrics loc="37" ncloc="24" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
+      </file>
+    </package>
+    <file name="/home/go/github/axypro/backtrace/tests/traceForTruncate.php">
+      <line num="5" type="stmt" count="8"/>
+      <line num="6" type="stmt" count="8"/>
+      <line num="7" type="stmt" count="8"/>
+      <line num="9" type="stmt" count="8"/>
+      <line num="10" type="stmt" count="8"/>
+      <line num="11" type="stmt" count="8"/>
+      <line num="12" type="stmt" count="8"/>
+      <line num="14" type="stmt" count="8"/>
+      <line num="15" type="stmt" count="8"/>
+      <line num="16" type="stmt" count="8"/>
+      <line num="17" type="stmt" count="8"/>
+      <line num="18" type="stmt" count="8"/>
+      <line num="20" type="stmt" count="8"/>
+      <line num="21" type="stmt" count="8"/>
+      <line num="22" type="stmt" count="8"/>
+      <line num="23" type="stmt" count="8"/>
+      <line num="24" type="stmt" count="8"/>
+      <line num="26" type="stmt" count="8"/>
+      <line num="27" type="stmt" count="8"/>
+      <line num="28" type="stmt" count="8"/>
+      <line num="29" type="stmt" count="8"/>
+      <line num="30" type="stmt" count="8"/>
+      <line num="32" type="stmt" count="8"/>
+      <line num="33" type="stmt" count="8"/>
+      <line num="34" type="stmt" count="8"/>
+      <line num="35" type="stmt" count="8"/>
+      <line num="36" type="stmt" count="8"/>
+      <line num="38" type="stmt" count="8"/>
+      <line num="39" type="stmt" count="8"/>
+      <line num="40" type="stmt" count="8"/>
+      <line num="41" type="stmt" count="8"/>
+      <line num="42" type="stmt" count="8"/>
+      <line num="44" type="stmt" count="8"/>
+      <line num="45" type="stmt" count="8"/>
+      <line num="46" type="stmt" count="8"/>
+      <line num="47" type="stmt" count="8"/>
+      <line num="48" type="stmt" count="8"/>
+      <line num="50" type="stmt" count="8"/>
+      <line num="51" type="stmt" count="8"/>
+      <line num="52" type="stmt" count="8"/>
+      <line num="53" type="stmt" count="8"/>
+      <line num="54" type="stmt" count="8"/>
+      <metrics loc="54" ncloc="54" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="42" coveredstatements="42" elements="42" coveredelements="42"/>
+    </file>
+    <metrics files="9" loc="2412" ncloc="1529" classes="4" methods="36" coveredmethods="35" conditionals="0" coveredconditionals="0" statements="754" coveredstatements="241" elements="790" coveredelements="276"/>
+  </project>
+</coverage>
