@@ -1,0 +1,48 @@
+{
+    "name": "middlewares/base-path",
+    "type": "library",
+    "description": "Middleware to remove the prefix from the uri path of the request.",
+    "license": "MIT",
+    "keywords": [
+        "psr-7",
+        "psr-15",
+        "middleware",
+        "server",
+        "http"
+    ],
+    "homepage": "https://github.com/middlewares/base-path",
+    "support": {
+        "issues": "https://github.com/middlewares/base-path/issues"
+    },
+    "require": {
+        "php": "^7.2 || ^8.0",
+        "psr/http-server-middleware": "^1.0"
+    },
+    "require-dev": {
+        "middlewares/utils": "^3.0",
+        "phpunit/phpunit": "^8|^9",
+        "friendsofphp/php-cs-fixer": "^2.0",
+        "squizlabs/php_codesniffer": "^3.0",
+        "oscarotero/php-cs-fixer-config": "^1.0",
+        "phpstan/phpstan": "^0.12",
+        "laminas/laminas-diactoros": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Middlewares\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Middlewares\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "cs": "phpcs",
+        "cs-fix": "php-cs-fixer fix",
+        "phpstan": "phpstan analyse",
+        "test": "phpunit",
+        "coverage": "phpunit --coverage-text",
+        "coverage-html": "phpunit --coverage-html=coverage"
+    }
+}

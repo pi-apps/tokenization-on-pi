@@ -1,0 +1,58 @@
+{
+    "name": "middlewares/utils",
+    "type": "library",
+    "description": "Common utils for PSR-15 middleware packages",
+    "license": "MIT",
+    "keywords": [
+        "psr-7",
+        "psr-15",
+        "psr-11",
+        "psr-17",
+        "middleware",
+        "http"
+    ],
+    "homepage": "https://github.com/middlewares/utils",
+    "support": {
+        "issues": "https://github.com/middlewares/utils/issues"
+    },
+    "require": {
+        "php": "^7.2 || ^8.0",
+        "psr/http-message": "^1.0",
+        "psr/http-server-middleware": "^1.0",
+        "psr/container": "^1.0 || ^2.0",
+        "psr/http-factory": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8|^9",
+        "phpstan/phpstan": "^0.12",
+        "laminas/laminas-diactoros": "^2.4",
+        "friendsofphp/php-cs-fixer": "^v2.16",
+        "oscarotero/php-cs-fixer-config": "^1.0",
+        "squizlabs/php_codesniffer": "^3.5",
+        "slim/psr7": "^1.4",
+        "guzzlehttp/psr7": "^2.0",
+        "sunrise/stream": "^1.0.15",
+        "sunrise/uri": "^1.0.15",
+        "sunrise/http-message": "^1.0",
+        "sunrise/http-server-request": "^1.0",
+        "nyholm/psr7": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Middlewares\\Utils\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Middlewares\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "cs": "phpcs",
+        "cs-fix": "php-cs-fixer fix",
+        "phpstan": "phpstan analyse",
+        "test": "phpunit",
+        "coverage": "phpunit --coverage-text",
+        "coverage-html": "phpunit --coverage-html=coverage"
+    }
+}

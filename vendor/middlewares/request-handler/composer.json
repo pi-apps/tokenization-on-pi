@@ -1,0 +1,56 @@
+{
+    "name": "middlewares/request-handler",
+    "type": "library",
+    "description": "Middleware to execute request handlers",
+    "license": "MIT",
+    "keywords": [
+        "psr-7",
+        "psr-15",
+        "middleware",
+        "server",
+        "http",
+        "request",
+        "handler",
+        "controller",
+        "invoke"
+    ],
+    "homepage": "https://github.com/middlewares/request-handler",
+    "support": {
+        "issues": "https://github.com/middlewares/request-handler/issues"
+    },
+    "require": {
+        "php": "^7.2 || ^8.0",
+        "middlewares/utils": "^3.0",
+        "psr/http-server-middleware": "^1.0",
+        "psr/container": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8|^9",
+        "friendsofphp/php-cs-fixer": "^2.0",
+        "oscarotero/php-cs-fixer-config": "^1.0",
+        "squizlabs/php_codesniffer": "^3.0",
+        "phpstan/phpstan": "^0.12",
+        "laminas/laminas-diactoros": "^2.3"
+    },
+    "suggest": {
+        "psr/container": "Can be used to resolve handlers automatically"
+    },
+    "autoload": {
+        "psr-4": {
+            "Middlewares\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Middlewares\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "cs": "phpcs",
+        "cs-fix": "php-cs-fixer fix",
+        "phpstan": "phpstan analyse",
+        "test": "phpunit",
+        "coverage": "phpunit --coverage-text",
+        "coverage-html": "phpunit --coverage-html=coverage"
+    }
+}
