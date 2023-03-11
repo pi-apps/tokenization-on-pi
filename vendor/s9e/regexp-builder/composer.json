@@ -1,0 +1,25 @@
+{
+	"name": "s9e/regexp-builder",
+	"type": "library",
+	"description": "Single-purpose library that generates regular expressions that match a list of strings.",
+	"homepage": "https://github.com/s9e/RegexpBuilder/",
+	"keywords": ["regexp"],
+	"license": "MIT",
+	"require": {
+		"lib-pcre": ">=7.2",
+		"php":      ">=7.1"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"s9e\\RegexpBuilder\\": "src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"s9e\\RegexpBuilder\\Tests\\": "tests"
+		}
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"name": "s9e/sweetdom",
+	"type": "library",
+	"description": "Syntactic sugar for the DOM API with a focus on XSLT 1.0 template manipulation.",
+	"homepage": "https://github.com/s9e/SweetDOM/",
+	"keywords": ["dom", "xsl", "xslt"],
+	"license": "MIT",
+	"require": {
+		"php":     ">=7.1",
+		"ext-dom": "*"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"s9e\\SweetDOM\\": "src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"s9e\\SweetDOM\\Tests\\": "tests"
+		}
+	}
+}
