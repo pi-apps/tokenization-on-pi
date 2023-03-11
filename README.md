@@ -34,4 +34,8 @@ Brainstorm:  pi://brainstorm.pi/project/63bd46814b80e56a4304da2c
 ## Legal team finalize contracts and documents for listing of asset token
 <br />![](https://raw.githubusercontent.com/pi-apps/tokenization-on-pi/main/images/Screenshot_20230213_204000_com.android.chrome.jpg)
 
+<br /><br />![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) 
+## Listed asset tokens are freely tradable in the embedded Trading Center
+<br />![](https://raw.githubusercontent.com/pi-apps/tokenization-on-pi/main/images/Screenshot_20230227_183544_pi.browser.jpg)
+
 
